@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name              °Ù¶ÈÍøÅÌ²»ÏŞÖÆÏÂÔØ-ÉñËÙDown
+// @name              ç™¾åº¦ç½‘ç›˜ä¸é™åˆ¶ä¸‹è½½-ç¥é€ŸDown
 // @namespace         https://github.com/AFANOOO/sspan
 // @version           6.1
 // @author            GreasyFork
-// @description       ²»ÏŞÖÆËÙ¶ÈÏÂÔØµÄ°Ù¶ÈÍøÅÌ½âÎö½Å±¾£¬ÎŞÊÓºÚºÅ£¬ÓµÓĞIDM/Aria2/MotrixÈıÖÖ·½Ê½ÈÎÒâÌåÑé¼«ËÙÏÂÔØ£¡ ÃæÏòËùÓĞÍøÓÑÃâ·Ñ½»Á÷Ñ§Ï°Ê¹ÓÃ£¬¸ü¶à¹¦ÄÜÕıÔÚÍêÉÆÖĞ...
+// @description       ä¸é™åˆ¶é€Ÿåº¦ä¸‹è½½çš„ç™¾åº¦ç½‘ç›˜è§£æè„šæœ¬ï¼Œæ— è§†é»‘å·ï¼Œæ‹¥æœ‰IDM/Aria2/Motrixä¸‰ç§æ–¹å¼ä»»æ„ä½“éªŒæé€Ÿä¸‹è½½ï¼ é¢å‘æ‰€æœ‰ç½‘å‹å…è´¹äº¤æµå­¦ä¹ ä½¿ç”¨ï¼Œæ›´å¤šåŠŸèƒ½æ­£åœ¨å®Œå–„ä¸­...
 // @license           AGPL-3.0-or-later
 // @icon              https://vitejs.dev/logo.svg
 // @match             *://pan.baidu.com/*
@@ -13,9 +13,9 @@
 // @connect           baidu.com
 // @connect           sswpdd.xyz
 // @require           https://code.jquery.com/jquery-2.2.4.min.js
-// @require           https://gcore.jsdelivr.net/gh/AFANOOO/sspan/layui-v2.9.2/layui.js
+// @require           https://cdn.staticfile.org/layui/2.8.17/layui.js
 // @require           https://fastly.jsdelivr.net/npm/sweetalert2@11
-// @resource          customCSS https://fastly.jsdelivr.net/gh/AFANOOO/sspan/layui-v2.9.2/css/layui.css
+// @resource          customCSS https://cdn.staticfile.org/layui/2.8.17/css/layui.css
 // @grant             GM_xmlhttpRequest
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
@@ -128,8 +128,8 @@ var siteUrl = 'https://sswpdd.xyz';
     // var requestTimeouts = 20000;
     // var timeoutId = setTimeout(function () {
     //     Swal.fire({
-    //         title: 'ÏµÍ³ÌáÊ¾',
-    //         text: '³õÊ¼»¯½Å±¾Ê§°Ü£¬¿ÉÄÜºóÌ¨ÎŞ·¨Í¨Ñ¶£¬Ò²ÓĞ¿ÉÄÜÕıÔÚ±»¹¥»÷¡£½¨Òé²é¿´¹«¸æ»òÕßÈºÏûÏ¢»ñÈ¡×îĞÂĞÅÏ¢¡£',
+    //         title: 'ç³»ç»Ÿæç¤º',
+    //         text: 'åˆå§‹åŒ–è„šæœ¬å¤±è´¥ï¼Œå¯èƒ½åå°æ— æ³•é€šè®¯ï¼Œä¹Ÿæœ‰å¯èƒ½æ­£åœ¨è¢«æ”»å‡»ã€‚å»ºè®®æŸ¥çœ‹å…¬å‘Šæˆ–è€…ç¾¤æ¶ˆæ¯è·å–æœ€æ–°ä¿¡æ¯ã€‚',
     //         icon: 'error'
     //     });
     // }, requestTimeouts);
@@ -148,20 +148,20 @@ var siteUrl = 'https://sswpdd.xyz';
     var layer = layui.layer;
     var element = layui.element;
 
-    $('.wp-s-agile-tool-bar__header.is-header-tool').prepend('<div class="wp-s-agile-tool-bar__h-group"><button style="    margin-right: 10px;" id="downbtn" class="u-button nd-file-list-toolbar-action-item is-need-left-sep u-button--primary u-button--default u-button--small is-has-icon  u-button--danger"><i class="iconfont icon-download"></i> <span>ÉñËÙDown</span></button></div>');
+    $('.wp-s-agile-tool-bar__header.is-header-tool').prepend('<div class="wp-s-agile-tool-bar__h-group"><button style="    margin-right: 10px;" id="downbtn" class="u-button nd-file-list-toolbar-action-item is-need-left-sep u-button--primary u-button--default u-button--small is-has-icon  u-button--danger"><i class="iconfont icon-download"></i> <span>ç¥é€ŸDown</span></button></div>');
 
     if(self == top){
       $('body').append(`
-      <div id="loadingtext" style=" display:none;padding: 1px;background: rgb(255 255 255);position: absolute;z-index: 2147483647;text-align: center;top: 57%;font-weight: 500;color: rgb(3, 169, 244);font-size: 25px;left: 50%;transform: translate(-50%, -50%);">¼ÓÔØÖĞ</div>`);
+      <div id="loadingtext" style=" display:none;padding: 1px;background: rgb(255 255 255);position: absolute;z-index: 2147483647;text-align: center;top: 57%;font-weight: 500;color: rgb(3, 169, 244);font-size: 25px;left: 50%;transform: translate(-50%, -50%);">åŠ è½½ä¸­</div>`);
     }
 
     var html = `
           <div>
           <div class="layui-tab layui-tab-brief" style="padding: 22px;">
           <ul class="layui-tab-title">
-            <li class="layui-this">Ê×Ò³</li>
-            <li>Íâ²¿×ÊÔ´</li>
-            <li>°æ±¾¸üĞÂ</li>
+            <li class="layui-this">é¦–é¡µ</li>
+            <li>å¤–éƒ¨èµ„æº</li>
+            <li>ç‰ˆæœ¬æ›´æ–°</li>
           </ul>
           <div class="layui-tab-content">
             <div class="layui-tab-item layui-show" style="padding:0 15px;">
@@ -169,9 +169,9 @@ var siteUrl = 'https://sswpdd.xyz';
               <div class="layui-card">
                   <div class="layui-card-body">
                     <div>
-                      <p style=" color: #b4b4b4; font-size: 16px;">µ±Ç°ÎÄ¼ş</p>
+                      <p style=" color: #b4b4b4; font-size: 16px;">å½“å‰æ–‡ä»¶</p>
                       <p id="curname" style="width:86%;" class="blockquote"></p>
-                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 0;top: 15px; background:#2196f3;" ><i class="layui-icon layui-icon-chart"></i>  ½âÎö</button>
+                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 0;top: 15px; background:#2196f3;" ><i class="layui-icon layui-icon-chart"></i>  è§£æ</button>
                     </div>
 
                   </div>
@@ -182,24 +182,24 @@ var siteUrl = 'https://sswpdd.xyz';
                   <div class="layui-card">
                     <div class="layui-card-body" style="text-align:center;height: 428px;">
                       <img src="https://sswpdd.xyz/ewm.jpg" style="width:250px;height:240px;">
-                      <h2 style="margin-top: 10px;">É¨Ò»É¨²»Ê§Áª</h2>
-                      <h3>·¢ËÍ <span class="piao">Ãâ·Ñ°×æÎ</span></h3>
-                      <h3>ËÄ¸ö×Ö»ñÈ¡°µºÅ/ÎŞÌ×Â·</h3>
+                      <h2 style="margin-top: 10px;">æ‰«ä¸€æ‰«ä¸å¤±è”</h2>
+                      <h3>å‘é€ <span class="piao">å…è´¹ç™½å«–</span></h3>
+                      <h3>å››ä¸ªå­—è·å–æš—å·/æ— å¥—è·¯</h3>
                       <div class="demo"><div class="pincode-input-container"></div></div>
                       <div id="popup" class="hidden">
                       <div class="content">
                           <div id="dialogDivSavePath">
-                          <span> ±£´æÂ·¾¶£º</span><input type="text" id="dialogTxtSavePath" value="${configDefault.savePath}" style="width: 170px;border: 1px solid #8b8b8b;"><br>
-                                  <span id="dialogAriaConfigClick" style="    color: #2196f3;">ÅäÖÃAria2&gt;&gt;</span>
+                          <span> ä¿å­˜è·¯å¾„ï¼š</span><input type="text" id="dialogTxtSavePath" value="${configDefault.savePath}" style="width: 170px;border: 1px solid #8b8b8b;"><br>
+                                  <span id="dialogAriaConfigClick" style="    color: #2196f3;">é…ç½®Aria2&gt;&gt;</span>
                                 <div id="dialogAriaConfig" style="display: none;">
-                                    <input type="text" id="dialogAriaRPC" value="${configDefault.jsonRpc}" title="RPCµØÖ·" placeholder="RPCµØÖ·" style="width: 100%;    border: 1px solid #8b8b8b;">
+                                    <input type="text" id="dialogAriaRPC" value="${configDefault.jsonRpc}" title="RPCåœ°å€" placeholder="RPCåœ°å€" style="width: 100%;    border: 1px solid #8b8b8b;">
                                     <input type="text" id="dialogAriaToken" value="${configDefault.token}" title="token" placeholder="token" style="width: 77px;    border: 1px solid #8b8b8b;">
                                     <br>
                                     <input type="checkbox" id="dialogAriaMine" ${configDefault.mine=='checked'?'checked':''}>
-                                    <span>Ê¹ÓÃ×Ô¼ºµÄAria2/Motrix£¨Èç²»¶®£¬Îğ¹´Ñ¡£©</span>
-                          <span class="bcsp">MotrixÄ¬ÈÏµØÖ·:</span><span>http://localhost:16800/jsonrpc </span>
+                                    <span>ä½¿ç”¨è‡ªå·±çš„Aria2/Motrixï¼ˆå¦‚ä¸æ‡‚ï¼Œå‹¿å‹¾é€‰ï¼‰</span>
+                          <span class="bcsp">Motrixé»˜è®¤åœ°å€:</span><span>http://localhost:16800/jsonrpc </span>
                           <br>
-                          <span class="bcsp">Aria2Ä¬ÈÏµØÖ·:</span><span>&nbsp;&nbsp;http://localhost:6800/jsonrpc </span>
+                          <span class="bcsp">Aria2é»˜è®¤åœ°å€:</span><span>&nbsp;&nbsp;http://localhost:6800/jsonrpc </span>
                                 </div>
                             </div>
                           </div>
@@ -214,17 +214,17 @@ var siteUrl = 'https://sswpdd.xyz';
               <div class="layui-card-body" style=" height: 428px;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">IDM</h1>
                 <p>
-                   Ñ¡Ïî ->ÏÂÔØ->ÊÖ¶¯Ìí¼ÓÈÎÎñÊ±Ê¹ÓÃµÄÓÃ»§´úÀí(UA) ->ÌîÈë Logstatistic¡£ÔÚIDMĞÂ½¨ÈÎÎñ£¬Õ³Ìùâ¿½Ó¼´¿ÉÏÂÔØ£¬
+                   é€‰é¡¹ ->ä¸‹è½½->æ‰‹åŠ¨æ·»åŠ ä»»åŠ¡æ—¶ä½¿ç”¨çš„ç”¨æˆ·ä»£ç†(UA) ->å¡«å…¥ Logstatisticã€‚åœ¨IDMæ–°å»ºä»»åŠ¡ï¼Œç²˜è´´é¥ªæ¥å³å¯ä¸‹è½½ï¼Œ
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><i class="layui-icon layui-icon-set"></i> ¸´ÖÆÁ´½Ó</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><i class="layui-icon layui-icon-set"></i> å¤åˆ¶é“¾æ¥</button>
                 <hr style="margin: 23px 0;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2</h1>
                 <p>
-                  µã»÷ ÍÆËÍµ½ Aria2(Motrix)½«×Ô¶¯ÏÂÔØ£¬Ö§³ÖWindows/Android¡£
+                  ç‚¹å‡» æ¨é€åˆ° Aria2(Motrix)å°†è‡ªåŠ¨ä¸‹è½½ï¼Œæ”¯æŒWindows/Androidã€‚
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><i class="layui-icon layui-icon-set"></i> ÍÆËÍÖÁAria2</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><i class="layui-icon layui-icon-set"></i> æ¨é€è‡³Aria2</button>
 
-                <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">Tips:ÏÂÔØËÙ¶ÈÒòÈË¶øÒì£¬ÌØ±ğÊÇ¹²ÏíÍøÂç£¨ÈçĞ£Ô°Íø£©</button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">Tips:ä¸‹è½½é€Ÿåº¦å› äººè€Œå¼‚ï¼Œç‰¹åˆ«æ˜¯å…±äº«ç½‘ç»œï¼ˆå¦‚æ ¡å›­ç½‘ï¼‰</button>
 
 
                 </div>
@@ -234,10 +234,10 @@ var siteUrl = 'https://sswpdd.xyz';
 
           </div>
           <div class="layui-tab-item">
-            <p style="text-align:center;">¿ª·¢ÖĞ...</p>
+            <p style="text-align:center;">å¼€å‘ä¸­...</p>
           </div>
           <div class="layui-tab-item">
-            <p style="text-align:center;">¿ª·¢ÖĞ...</p>
+            <p style="text-align:center;">å¼€å‘ä¸­...</p>
           </div>
         </div>
         </div>
@@ -264,16 +264,16 @@ var siteUrl = 'https://sswpdd.xyz';
       });
       if( $('tr.selected img[src*="ceH8M5EZYnGhnBKRceGqmaZXPPw2xbO+1x"]').length>0){
           Swal.fire({
-              title: 'ÏµÍ³ÌáÊ¾',
-              text: 'Çë²»ÒªÑ¡ÔñÎÄ¼ş¼Ğ½âÎö,ÒòÎª»¹Ã»Ñ§»á.',
+              title: 'ç³»ç»Ÿæç¤º',
+              text: 'è¯·ä¸è¦é€‰æ‹©æ–‡ä»¶å¤¹è§£æ,å› ä¸ºè¿˜æ²¡å­¦ä¼š.',
               icon: 'error'
           });
           return;
       }
       if (selectedIds.length === 0) {
           Swal.fire({
-              title: 'ÏµÍ³ÌáÊ¾',
-              text: 'ÇëÑ¡ÔñĞèÒªÏÂÔØµÄÎÄ¼ş',
+              title: 'ç³»ç»Ÿæç¤º',
+              text: 'è¯·é€‰æ‹©éœ€è¦ä¸‹è½½çš„æ–‡ä»¶',
               icon: 'error'
           });
           return;
@@ -310,8 +310,8 @@ var siteUrl = 'https://sswpdd.xyz';
                 $('tr.selected').each(function(index,item){
                     selectedone.push($(item).find('td').eq(1).find('a').attr('title'));
                 });
-                var text = ( selectedone+'µÈ'+$('tr.selected').length+'¸öÎÄ¼ş...');
-                $('#curname').text(selectedone.join('¡¢'));
+                var text = ( selectedone+'ç­‰'+$('tr.selected').length+'ä¸ªæ–‡ä»¶...');
+                $('#curname').text(selectedone.join('ã€'));
 
 
                 $('#deal').click(function(){
@@ -329,7 +329,7 @@ var siteUrl = 'https://sswpdd.xyz';
                         el.select();
                         document.execCommand('copy');
                         document.body.removeChild(el);
-                        layer.msg('ÒÑ¸´ÖÆ');
+                        layer.msg('å·²å¤åˆ¶');
                     }
                 });
                 $('#pusharia').click(function(){
@@ -341,7 +341,7 @@ var siteUrl = 'https://sswpdd.xyz';
 
                 $('#savejsonrpc').click(function(){
                     localStorage['jsonrpc'] = $('#jsonrpc').val();
-                    layer.msg('ÒÑ±£´æ');
+                    layer.msg('å·²ä¿å­˜');
                 });
 
                 $('#setoption').click(function(){
@@ -396,11 +396,11 @@ var siteUrl = 'https://sswpdd.xyz';
               ]
           }
           let data = JSON.stringify(ddconfig);
-          //¶¨Òå·¢ËÍÖÁaria2
+          //å®šä¹‰å‘é€è‡³aria2
           let details = {
               method: 'POST',
               responseType: 'json',
-              timeout: 5000, // 5Ãë³¬Ê±
+              timeout: 5000, // 5ç§’è¶…æ—¶
               url: rpcHostUrl,
               data: data,
               onload: function (res) {
@@ -408,25 +408,25 @@ var siteUrl = 'https://sswpdd.xyz';
                       layer.closeAll('loading');
                         $('#loadingtext').hide();
                       if (res.response.result) {
-                          // Õı³£·µ»Ø
+                          // æ­£å¸¸è¿”å›
 
                           Swal.fire({
-                              title: 'ÏµÍ³ÌáÊ¾',
-                              text: 'ÍÆËÍ³É¹¦',
+                              title: 'ç³»ç»Ÿæç¤º',
+                              text: 'æ¨é€æˆåŠŸ',
                               icon:'success'
                           });
                       } else {
-                          // ÆäËü´íÎó
+                          // å…¶å®ƒé”™è¯¯
                           Swal.fire({
-                              title: 'ÏµÍ³ÌáÊ¾',
-                              text: '·¢Éú´íÎó,Çë¹Ø±Õ´°¿ÚÖØÊÔ1',
+                              title: 'ç³»ç»Ÿæç¤º',
+                              text: 'å‘ç”Ÿé”™è¯¯,è¯·å…³é—­çª—å£é‡è¯•1',
                               icon:'error'
                           });
                       }
                   } else {
                           Swal.fire({
-                              title: 'ÏµÍ³ÌáÊ¾',
-                              text: '·¢Éú´íÎó,Çë¹Ø±Õ´°¿ÚÖØÊÔ2'+res.responseText,
+                              title: 'ç³»ç»Ÿæç¤º',
+                              text: 'å‘ç”Ÿé”™è¯¯,è¯·å…³é—­çª—å£é‡è¯•2'+res.responseText,
                               icon:'error'
                           });
                   }
@@ -435,8 +435,8 @@ var siteUrl = 'https://sswpdd.xyz';
                layer.closeAll('loading');
                         $('#loadingtext').hide();
                   Swal.fire({
-                      title: 'ÏµÍ³ÌáÊ¾',
-                      text: 'Á¬½Óµ½RPC·şÎñÆ÷³¬Ê±£ºÇë¼ì²éAria2ÊÇ·ñÒÑÁ¬½Ó£¬RPCÅäÖÃÊÇ·ñÕıÈ·£¡',
+                      title: 'ç³»ç»Ÿæç¤º',
+                      text: 'è¿æ¥åˆ°RPCæœåŠ¡å™¨è¶…æ—¶ï¼šè¯·æ£€æŸ¥Aria2æ˜¯å¦å·²è¿æ¥ï¼ŒRPCé…ç½®æ˜¯å¦æ­£ç¡®ï¼',
                       icon:'error'
                   });
               },
@@ -444,8 +444,8 @@ var siteUrl = 'https://sswpdd.xyz';
               layer.closeAll('loading');
                         $('#loadingtext').hide();
                   Swal.fire({
-                      title: 'ÏµÍ³ÌáÊ¾',
-                      text: '·¢ËÍÖÁAria2Ê±·¢Éú´íÎó£¬ÇëÖØÊÔ£¡'+res.responseText,
+                      title: 'ç³»ç»Ÿæç¤º',
+                      text: 'å‘é€è‡³Aria2æ—¶å‘ç”Ÿé”™è¯¯ï¼Œè¯·é‡è¯•ï¼'+res.responseText,
                       icon:'error'
                   });
               }
@@ -456,8 +456,8 @@ var siteUrl = 'https://sswpdd.xyz';
               layer.closeAll('loading');
                         $('#loadingtext').hide();
               Swal.fire({
-                  title: 'ÏµÍ³ÌáÊ¾',
-                  text: '·¢Éú´íÎó,Çë¹Ø±Õ´°¿ÚÖØÊÔ£¡',
+                  title: 'ç³»ç»Ÿæç¤º',
+                  text: 'å‘ç”Ÿé”™è¯¯,è¯·å…³é—­çª—å£é‡è¯•ï¼',
                   icon:'error'
               });
           }
@@ -481,10 +481,10 @@ var siteUrl = 'https://sswpdd.xyz';
           data: JSON.stringify(jsonrpcData),
           contentType: 'application/json',
           success: function (response) {
-              Swal.fire('·¢ËÍMotrix³É¹¦', 'Çë¼ì²éÄãµÄÏÂÔØÈÎÎñ', 'success');
+              Swal.fire('å‘é€MotrixæˆåŠŸ', 'è¯·æ£€æŸ¥ä½ çš„ä¸‹è½½ä»»åŠ¡', 'success');
           },
           error: function (error) {
-              Swal.fire('·¢ËÍ´íÎó£¡', 'Äã¿ÉÄÜÃ»ÓĞ°²×°»òÔËĞĞÏÂÔØÆ÷!Èç¹ûÒÑ¾­°²×°²¢ÔËĞĞ,Çë³¢ÊÔÖØÆôËü,»òÕß¼ì²éÓĞÃ»ÓĞ¿ªÆôRPC¶ÔÓ¦¶Ë¿ÚÊÇ·ñÕıÈ·,Ä¬ÈÏMotrix¶Ë¿ÚÎª:16800', 'error');
+              Swal.fire('å‘é€é”™è¯¯ï¼', 'ä½ å¯èƒ½æ²¡æœ‰å®‰è£…æˆ–è¿è¡Œä¸‹è½½å™¨!å¦‚æœå·²ç»å®‰è£…å¹¶è¿è¡Œ,è¯·å°è¯•é‡å¯å®ƒ,æˆ–è€…æ£€æŸ¥æœ‰æ²¡æœ‰å¼€å¯RPCå¯¹åº”ç«¯å£æ˜¯å¦æ­£ç¡®,é»˜è®¤Motrixç«¯å£ä¸º:16800', 'error');
               return;
           }
       });
@@ -530,7 +530,7 @@ var siteUrl = 'https://sswpdd.xyz';
      $('#loadingtext').text('');
      //password = anhao||password;
      saveLastUseData();
-     $('#loadingtext').text('ÕıÔÚ·ÖÏíÎÄ¼ş...');
+     $('#loadingtext').text('æ­£åœ¨åˆ†äº«æ–‡ä»¶...');
      if(!$('#copy').hasClass('layui-btn-disabled')){
          $('#copy').addClass('layui-btn-disabled');
      }
@@ -564,16 +564,16 @@ var siteUrl = 'https://sswpdd.xyz';
      console.log('selectedIds------->>>>',selectedIds)
 
     $.post("https://pan.baidu.com/share/set?channel=chunlei&bdstoken=" + bdstoken + "", "period=1&pwd=" + password + "&eflag_disable=true&channel_list=%5B%5D&schannel=4&fid_list=[" + selectedIds + "]", function (res) {
-        if (res.show_msg == "¸ÃÎÄ¼ş½ûÖ¹·ÖÏí") {
+        if (res.show_msg == "è¯¥æ–‡ä»¶ç¦æ­¢åˆ†äº«") {
             layer.closeAll('loading');
                       $('#loadingtext').hide();
-            $('#texttip').val('Î¥¹æÎÄ¼ş£¬²»ÄÜ½øĞĞÏÂÔØ');
-            Swal.fire("´íÎó£¡", "ËùÑ¡ÔñµÄÎÄ¼şÖĞ°üº¬Î¥¹æÎÄ¼ş£¬²»ÄÜ½øĞĞÏÂÔØ", "error");
+            $('#texttip').val('è¿è§„æ–‡ä»¶ï¼Œä¸èƒ½è¿›è¡Œä¸‹è½½');
+            Swal.fire("é”™è¯¯ï¼", "æ‰€é€‰æ‹©çš„æ–‡ä»¶ä¸­åŒ…å«è¿è§„æ–‡ä»¶ï¼Œä¸èƒ½è¿›è¡Œä¸‹è½½", "error");
             return;
         }
         var url = res.link;
         console.log(res,password)
-        //siteUrl +/parse/listpost surl=°Ù¶ÈµØÖ·1&pwd=°Ù¶ÈÃÜÂë&password=Õ¾µãÃÜÂë
+        //siteUrl +/parse/listpost surl=ç™¾åº¦åœ°å€1&pwd=ç™¾åº¦å¯†ç &password=ç«™ç‚¹å¯†ç 
         var shorturl='';
         try{
         shorturl = url.substring(url.lastIndexOf('/') + 1);
@@ -581,10 +581,10 @@ var siteUrl = 'https://sswpdd.xyz';
         if(!shorturl){
             layer.closeAll('loading');
                       $('#loadingtext').hide();
-            Swal.fire("´íÎó£¡", res.msg, "error");
+            Swal.fire("é”™è¯¯ï¼", res.msg, "error");
             return;
         }
-        $('#loadingtext').text('ÕıÔÚ²éÑ¯·şÎñÆ÷½Ó¿ÚµØÖ·......');
+        $('#loadingtext').text('æ­£åœ¨æŸ¥è¯¢æœåŠ¡å™¨æ¥å£åœ°å€......');
         GM_xmlhttpRequest({
             method: "post",
             url: siteUrl+'/parse/list',
@@ -597,12 +597,12 @@ var siteUrl = 'https://sswpdd.xyz';
                 if (response.status == 200) {
                     const getres = JSON.parse(response.responseText);
                     console.log('getres------->',getres);
-                    if(getres.error == -1 || getres.error == 1 ){ //ÏµÍ³Î¬»¤
+                    if(getres.error == -1 || getres.error == 1 ){ //ç³»ç»Ÿç»´æŠ¤
                         layer.closeAll('loading');
                       $('#loadingtext').hide();
-                        $('#texttip').val('ÏµÍ³Î¬»¤ÖĞ...');
+                        $('#texttip').val('ç³»ç»Ÿç»´æŠ¤ä¸­...');
                         Swal.fire({
-                            title: 'ÏµÍ³ÌáÊ¾',
+                            title: 'ç³»ç»Ÿæç¤º',
                             text: getres.msg,
                             icon: 'error'
                         });
@@ -611,32 +611,32 @@ var siteUrl = 'https://sswpdd.xyz';
                       $('#loadingtext').hide();
                         $('#texttip').val(getres.err);
                         Swal.fire({
-                            title: 'ÏµÍ³ÌáÊ¾',
+                            title: 'ç³»ç»Ÿæç¤º',
                             text: getres.err,
                             icon: 'error'
                         });
                         $('.demo').show();
-                    } else if(getres.error == 1012){ //ÏµÍ³Î¬»¤
+                    } else if(getres.error == 1012){ //ç³»ç»Ÿç»´æŠ¤
                         layer.closeAll('loading');
                       $('#loadingtext').hide();
-                        $('#texttip').val('ÏµÍ³Î¬»¤ÖĞ...');
+                        $('#texttip').val('ç³»ç»Ÿç»´æŠ¤ä¸­...');
                         Swal.fire({
-                            title: 'ÏµÍ³ÌáÊ¾',
+                            title: 'ç³»ç»Ÿæç¤º',
                             text: getres.err,
                             icon: 'error'
                         });
-                    }else if(getres.error == 1011){ //ÏµÍ³Î¬»¤
+                    }else if(getres.error == 1011){ //ç³»ç»Ÿç»´æŠ¤
                         layer.closeAll('loading');
                       $('#loadingtext').hide();
-                        $('#texttip').val('ÏµÍ³Î¬»¤ÖĞ...');
+                        $('#texttip').val('ç³»ç»Ÿç»´æŠ¤ä¸­...');
                         Swal.fire({
-                            title: 'ÏµÍ³ÌáÊ¾',
+                            title: 'ç³»ç»Ÿæç¤º',
                             text: getres.err,
                             icon: 'error'
                         });
                     } else if (getres.error == 0) {
 
-                      //  $('#loadingtext').text('ÕıÔÚ²éÑ¯·şÎñÆ÷½Ó¿ÚµØÖ·......');
+                      //  $('#loadingtext').text('æ­£åœ¨æŸ¥è¯¢æœåŠ¡å™¨æ¥å£åœ°å€......');
                         var data_ = getres.dirdata
                         var data__ = getres.filedata[0]
 
@@ -652,10 +652,10 @@ var siteUrl = 'https://sswpdd.xyz';
                                 console.log('ress------->>>',ress)
                                 if(ress.response.error == 0){
                                     let downlink = ress.response.directlink;
-                                    $('#texttip').val('½âÎö³É¹¦');
+                                    $('#texttip').val('è§£ææˆåŠŸ');
 
 
-                                    Swal.fire('½âÎö³É¹¦', 'Çë¸´ÖÆÁ´½Ó»òÍÆËÍaria', 'success');
+                                    Swal.fire('è§£ææˆåŠŸ', 'è¯·å¤åˆ¶é“¾æ¥æˆ–æ¨é€aria', 'success');
                                     $('#copy').removeClass('layui-btn-disabled').attr('data-url',downlink);
                                     $('#pusharia').removeClass('layui-btn-disabled').attr('data-url',downlink);
 
@@ -663,7 +663,7 @@ var siteUrl = 'https://sswpdd.xyz';
                                 } else {
 
                                     Swal.fire({
-                                        title: 'ÏµÍ³ÌáÊ¾',
+                                        title: 'ç³»ç»Ÿæç¤º',
                                         text: ress.response.msg,
                                         icon: 'error'
                                     });
@@ -684,7 +684,8 @@ var siteUrl = 'https://sswpdd.xyz';
     })
   }
 
-  // ÃÜÂë¿ò
+  // å¯†ç æ¡†
   ;var PincodeInput=function(){return function(){function b(c,p){var o=p.count,e=void 0===o?4:o,i=p.secure,n=void 0!==i&&i,l=p.previewDuration,a=void 0===l?200:l;this.args=p,this.selector=document.querySelector(c),this.count=e,this.secure=n,this.previewDuration=a,this.cells=[],this.focusedCellIdx=0,this.value="",this.setCells()}return b.prototype.setCells=function(){for(var a=0;a<this.count;a++){var d=document.createElement("input");d.classList.add("pincode-input"),this.cells.push(d),this.selector.appendChild(d)}this.initCells()},b.prototype.initCells=function(){var a=this;this.cells.forEach((function(f,e){f.addEventListener("input",(function(d){var c=d.currentTarget.value;a.onCellChanged(e,c,d)})),f.addEventListener("focus",(function(){a.focusedCellIdx=e})),f.addEventListener("keydown",(function(c){a.onKeyDown(c,e),"ArrowLeft"!==c.key&&"ArrowRight"!==c.key&&"ArrowUp"!==c.key&&"ArrowDown"!==c.key&&"Backspace"!==c.key&&"Delete"!==c.key&&a.cells[e].setAttribute("type","text")})),f.addEventListener("focus",(function(){f.classList.add("pincode-input--focused")})),f.addEventListener("blur",(function(){f.classList.remove("pincode-input--focused")}))}))},b.prototype.onCellChanged=function(a,h,g){var e=this;if(!this.isTheCellValid(h)){return this.cells[a].classList.remove("pincode-input--filled"),this.cells[a].value="",void this.getValue()}this.cells[a].classList.add("pincode-input--filled"),this.secure&&this.previewDuration&&setTimeout((function(){e.cells[a].setAttribute("type","password")}),this.previewDuration),this.getValue(),this.focusNextCell()},b.prototype.onKeyDown=function(a,d){switch(a.key){case"ArrowLeft":this.focusPreviousCell();break;case"ArrowRight":this.focusNextCell();break;case"Backspace":this.cells[d].value.length||this.onCellErase(d,a)}},b.prototype.onCellErase=function(a,d){this.cells[a].value.length||(this.focusPreviousCell(),d.preventDefault())},b.prototype.focusPreviousCell=function(){this.focusedCellIdx&&this.focusCellByIndex(this.focusedCellIdx-1)},b.prototype.focusNextCell=function(){this.focusedCellIdx!==this.cells.length-1&&this.focusCellByIndex(this.focusedCellIdx+1)},b.prototype.focusCellByIndex=function(a){void 0===a&&(a=0);var d=this.cells[a];d.focus(),d.select(),this.focusedCellIdx=a},b.prototype.isTheCellValid=function(a){return !!a.match("^\\d{1}$")},b.prototype.getValue=function(){var a=this;this.value="",this.cells.forEach((function(d){a.value+=d.value})),this.args.onInput(this.value)},b}()}();
 
 });
+
