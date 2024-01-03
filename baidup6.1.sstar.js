@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
-// @namespace         https://github.com/syhyz1990/baiduyun
+// @namespace         https://github.com/AFANOOO/sspan
 // @version           6.1
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！ 面向所有网友免费交流学习使用，更多功能正在完善中...
@@ -688,8 +688,4 @@ var siteUrl = 'https://sswpdd.xyz';
   ;var PincodeInput=function(){return function(){function b(c,p){var o=p.count,e=void 0===o?4:o,i=p.secure,n=void 0!==i&&i,l=p.previewDuration,a=void 0===l?200:l;this.args=p,this.selector=document.querySelector(c),this.count=e,this.secure=n,this.previewDuration=a,this.cells=[],this.focusedCellIdx=0,this.value="",this.setCells()}return b.prototype.setCells=function(){for(var a=0;a<this.count;a++){var d=document.createElement("input");d.classList.add("pincode-input"),this.cells.push(d),this.selector.appendChild(d)}this.initCells()},b.prototype.initCells=function(){var a=this;this.cells.forEach((function(f,e){f.addEventListener("input",(function(d){var c=d.currentTarget.value;a.onCellChanged(e,c,d)})),f.addEventListener("focus",(function(){a.focusedCellIdx=e})),f.addEventListener("keydown",(function(c){a.onKeyDown(c,e),"ArrowLeft"!==c.key&&"ArrowRight"!==c.key&&"ArrowUp"!==c.key&&"ArrowDown"!==c.key&&"Backspace"!==c.key&&"Delete"!==c.key&&a.cells[e].setAttribute("type","text")})),f.addEventListener("focus",(function(){f.classList.add("pincode-input--focused")})),f.addEventListener("blur",(function(){f.classList.remove("pincode-input--focused")}))}))},b.prototype.onCellChanged=function(a,h,g){var e=this;if(!this.isTheCellValid(h)){return this.cells[a].classList.remove("pincode-input--filled"),this.cells[a].value="",void this.getValue()}this.cells[a].classList.add("pincode-input--filled"),this.secure&&this.previewDuration&&setTimeout((function(){e.cells[a].setAttribute("type","password")}),this.previewDuration),this.getValue(),this.focusNextCell()},b.prototype.onKeyDown=function(a,d){switch(a.key){case"ArrowLeft":this.focusPreviousCell();break;case"ArrowRight":this.focusNextCell();break;case"Backspace":this.cells[d].value.length||this.onCellErase(d,a)}},b.prototype.onCellErase=function(a,d){this.cells[a].value.length||(this.focusPreviousCell(),d.preventDefault())},b.prototype.focusPreviousCell=function(){this.focusedCellIdx&&this.focusCellByIndex(this.focusedCellIdx-1)},b.prototype.focusNextCell=function(){this.focusedCellIdx!==this.cells.length-1&&this.focusCellByIndex(this.focusedCellIdx+1)},b.prototype.focusCellByIndex=function(a){void 0===a&&(a=0);var d=this.cells[a];d.focus(),d.select(),this.focusedCellIdx=a},b.prototype.isTheCellValid=function(a){return !!a.match("^\\d{1}$")},b.prototype.getValue=function(){var a=this;this.value="",this.cells.forEach((function(d){a.value+=d.value})),this.args.onInput(this.value)},b}()}();
 
 });
-
-
-
-
 
