@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name              百度网盘不限制下载-神速Down6.1
+// @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
 // @version           6.1
 // @author            GreasyFork
@@ -223,7 +223,7 @@ $(function(){
                       </div>
 
 
-                <img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 22px; right: 15px; bottom: 20px;    width: 38px;">
+                <img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 9px; right: 15px; bottom: 20px;width: 35px;">
               </div>
             </div>
           </div>
