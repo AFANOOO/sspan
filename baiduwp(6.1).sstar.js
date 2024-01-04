@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name              百度网盘不限制下载-神速Down
+// @name              百度网盘不限制下载-神速Down6.1
 // @namespace         https://github.com/AFANOOO/sspan
 // @version           6.1
 // @author            GreasyFork
-// @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
+// @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！ 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @license           AGPL-3.0-or-later
 // @icon              https://vitejs.dev/logo.svg
 // @match             *://pan.baidu.com/*
@@ -12,17 +12,29 @@
 // @connect           127.0.0.1
 // @connect           baidu.com
 // @connect           sswpdd.xyz
-// @require           https://code.jquery.com/jquery-2.2.4.min.js
-// @require           https://cdn.staticfile.org/layui/2.8.17/layui.js
-// @require           https://fastly.jsdelivr.net/npm/sweetalert2@11
-// @resource          customCSS https://cdn.staticfile.org/layui/2.8.17/css/layui.css
+// @require           https://lib.baomitu.com/layui/2.9.3/layui.min.js
+// @require           https://lib.baomitu.com/layui/2.9.3/layui.js
+// @resource          customCSS https://lib.baomitu.com/layui/2.9.3/css/layui.css
 // @grant             GM_xmlhttpRequest
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
 // ==/UserScript==
 
 
+var siteUrl = 'https://sswpdd.xyz';
+
+
+
+
 $(function(){
+
+    setInterval(function(){
+        if($('.layui-layer-close').length>0){
+            $('.layui-layer-close').html('<img src="https://s11.ax1x.com/2024/01/04/pivY2VA.png" style="position: absolute; width: 14px; left: 4px; top: 4px;">');
+        }
+    },100);
+
+    var closeimg = 'https://s11.ax1x.com/2024/01/04/pivYEjg.png';
 
     const css = GM_getResourceText("customCSS");
     GM_addStyle(css);
@@ -39,6 +51,10 @@ $(function(){
       right: -5px!important;
       top: -5px!important;
       }
+      .layui-layer-close::before {
+        content: none!important;
+    }
+
       .swal2-container{
       z-index: 999999999;
       }
@@ -121,7 +137,7 @@ $(function(){
       }
     </style>`);
 
-var siteUrl = 'https://sswpdd.xyz';
+
 
     var UA;
     var password = '6688';
@@ -136,7 +152,7 @@ var siteUrl = 'https://sswpdd.xyz';
 
 
     let configDefault = {
-        savePath: localStorage['savePath'] || 'D:\\SSDOWN',
+        savePath: localStorage['savePath'] || 'D:\\Download',
         jsonRpc:  localStorage['jsonRpc'] || 'http://localhost:6800/jsonrpc',
         token: localStorage['token'] || '',
         mine: localStorage['mine'] || '',
@@ -171,7 +187,7 @@ var siteUrl = 'https://sswpdd.xyz';
                     <div>
                       <p style=" color: #b4b4b4; font-size: 16px;">当前文件</p>
                       <p id="curname" style="width:86%;" class="blockquote"></p>
-                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 0;top: 15px; background:#2196f3;" ><i class="layui-icon layui-icon-chart"></i>  解析</button>
+                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 0;top: 15px; background:#2196f3;" ><img src="https://s11.ax1x.com/2024/01/04/pivNAmQ.png" style=" width: 15px;">  解析</button>
                     </div>
 
                   </div>
@@ -181,7 +197,7 @@ var siteUrl = 'https://sswpdd.xyz';
                 <div class="layui-col-md6 layui-col-sm6">
                   <div class="layui-card">
                     <div class="layui-card-body" style="text-align:center;height: 428px;">
-                      <img src="https://sswpdd.xyz/ewm.jpg" style="width:250px;height:240px;">
+                      <img src="https://sswpdd.xyz/ewm.jpg" style="width:240px;height:240px;">
                       <h2 style="margin-top: 10px;">扫一扫不失联</h2>
                       <h3>发送 <span class="piao">免费白嫖</span></h3>
                       <h3>四个字获取暗号/无套路</h3>
@@ -205,7 +221,8 @@ var siteUrl = 'https://sswpdd.xyz';
                           </div>
                       </div>
 
-                <i class="layui-icon layui-icon-set" id="setoption" style=" position: absolute;cursor: pointer; font-size: 28px; right: 15px; bottom: 20px;"></i>
+
+                <img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 22px; right: 15px; bottom: 20px;    width: 38px;">
               </div>
             </div>
           </div>
@@ -216,15 +233,15 @@ var siteUrl = 'https://sswpdd.xyz';
                 <p>
                    选项 ->下载->手动添加任务时使用的用户代理(UA) ->填入 Logstatistic。在IDM新建任务，粘贴饪接即可下载，
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><i class="layui-icon layui-icon-set"></i> 复制链接</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 复制链接</button>
                 <hr style="margin: 23px 0;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2</h1>
                 <p>
                   点击 推送到 Aria2(Motrix)将自动下载，支持Windows/Android。
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><i class="layui-icon layui-icon-set"></i> 推送至Aria2</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 推送至Aria2</button>
 
-                <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">Tips:下载速度因人而异，特别是共享网络（如校园网）</button>
+                <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">下载速度因人而异，特别是共享网络（如校园网）</button>
 
 
                 </div>
@@ -396,11 +413,11 @@ var siteUrl = 'https://sswpdd.xyz';
               ]
           }
           let data = JSON.stringify(ddconfig);
-          //定义发送至aria2
+          //发送至aria2
           let details = {
               method: 'POST',
               responseType: 'json',
-              timeout: 5000, // 5秒超时
+              timeout: 5000, // 3秒超时
               url: rpcHostUrl,
               data: data,
               onload: function (res) {
@@ -688,4 +705,3 @@ var siteUrl = 'https://sswpdd.xyz';
   ;var PincodeInput=function(){return function(){function b(c,p){var o=p.count,e=void 0===o?4:o,i=p.secure,n=void 0!==i&&i,l=p.previewDuration,a=void 0===l?200:l;this.args=p,this.selector=document.querySelector(c),this.count=e,this.secure=n,this.previewDuration=a,this.cells=[],this.focusedCellIdx=0,this.value="",this.setCells()}return b.prototype.setCells=function(){for(var a=0;a<this.count;a++){var d=document.createElement("input");d.classList.add("pincode-input"),this.cells.push(d),this.selector.appendChild(d)}this.initCells()},b.prototype.initCells=function(){var a=this;this.cells.forEach((function(f,e){f.addEventListener("input",(function(d){var c=d.currentTarget.value;a.onCellChanged(e,c,d)})),f.addEventListener("focus",(function(){a.focusedCellIdx=e})),f.addEventListener("keydown",(function(c){a.onKeyDown(c,e),"ArrowLeft"!==c.key&&"ArrowRight"!==c.key&&"ArrowUp"!==c.key&&"ArrowDown"!==c.key&&"Backspace"!==c.key&&"Delete"!==c.key&&a.cells[e].setAttribute("type","text")})),f.addEventListener("focus",(function(){f.classList.add("pincode-input--focused")})),f.addEventListener("blur",(function(){f.classList.remove("pincode-input--focused")}))}))},b.prototype.onCellChanged=function(a,h,g){var e=this;if(!this.isTheCellValid(h)){return this.cells[a].classList.remove("pincode-input--filled"),this.cells[a].value="",void this.getValue()}this.cells[a].classList.add("pincode-input--filled"),this.secure&&this.previewDuration&&setTimeout((function(){e.cells[a].setAttribute("type","password")}),this.previewDuration),this.getValue(),this.focusNextCell()},b.prototype.onKeyDown=function(a,d){switch(a.key){case"ArrowLeft":this.focusPreviousCell();break;case"ArrowRight":this.focusNextCell();break;case"Backspace":this.cells[d].value.length||this.onCellErase(d,a)}},b.prototype.onCellErase=function(a,d){this.cells[a].value.length||(this.focusPreviousCell(),d.preventDefault())},b.prototype.focusPreviousCell=function(){this.focusedCellIdx&&this.focusCellByIndex(this.focusedCellIdx-1)},b.prototype.focusNextCell=function(){this.focusedCellIdx!==this.cells.length-1&&this.focusCellByIndex(this.focusedCellIdx+1)},b.prototype.focusCellByIndex=function(a){void 0===a&&(a=0);var d=this.cells[a];d.focus(),d.select(),this.focusedCellIdx=a},b.prototype.isTheCellValid=function(a){return !!a.match("^\\d{1}$")},b.prototype.getValue=function(){var a=this;this.value="",this.cells.forEach((function(d){a.value+=d.value})),this.args.onInput(this.value)},b}()}();
 
 });
-
