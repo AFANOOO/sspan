@@ -234,9 +234,9 @@ $(function () {
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 复制链接</button>
                 <hr style="margin: 23px 0;">
-                <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2</h1>
+                <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2/Motrix</h1>
                 <p>
-                  点击 推送到 Aria2(Motrix)将自动下载，支持Windows/Android。
+                  点击 推送到 Aria2(Motrix)将自动下载，支持Windows/Android。MAC需要需要设置保存路径。
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 推送至Aria2</button>
 
@@ -291,9 +291,9 @@ $(function () {
             }
             if (selectedIds.length === 0) {
                 Swal.fire({
-                    //确认按钮显示在右上角
-                    showConfirmButton: false, // 隐藏确认按钮
-                    showCloseButton: true, // 显示关闭按钮
+
+                    showConfirmButton: true, // 显示确认按钮
+               //   showCloseButton: true, // 隐藏关闭按钮
 
                     title: '系统提示',
                     text: '请选择需要下载的文件',
@@ -639,7 +639,7 @@ $(function () {
                             const options = {
                                 title: '系统提示',
                                 showConfirmButton: false, // 隐藏确认按钮
-                                showCloseButton: true,
+                            //  showCloseButton: true,    //关闭按钮
                                 icon: 'error'
                             }
 
