@@ -14,7 +14,7 @@
 // @connect           sswpdd.xyz
 // @require           https://lib.baomitu.com/layui/2.9.3/layui.min.js
 // @require           https://lib.baomitu.com/limonte-sweetalert2/11.10.2/sweetalert2.all.min.js
-// @require           https://gitee.com/xmy621/studytm/raw/master/tm/layui.js
+// @require           https://lib.baomitu.com/layui/2.9.3/layui.js
 // @resource          customCSS https://lib.baomitu.com/layui/2.9.3/css/layui.css
 // @grant             GM_xmlhttpRequest
 // @grant             GM_addStyle
