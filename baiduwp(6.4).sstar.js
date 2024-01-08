@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.3
+// @version           6.4
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @license           AGPL-3.0-or-later
@@ -221,7 +221,7 @@ $(function () {
                       </div>
 
 
-                <img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 9px; right: 15px; bottom: 20px;width: 35px;">
+                <img src="https://s11.ax1x.com/2024/01/08/pFSYwSx.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 9px; right: 15px; bottom: 20px;width: 35px;">
               </div>
             </div>
           </div>
@@ -232,13 +232,13 @@ $(function () {
                 <p>
                    选项 ->下载->手动添加任务时使用的用户代理(UA) ->填入 Logstatistic。在IDM新建任务，粘贴饪接即可下载，
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 复制链接</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/08/pFSYUYR.png" style="  width: 25px;"> 复制链接</button>
                 <hr style="margin: 23px 0;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2/Motrix</h1>
                 <p>
-                  点击 推送到 Aria2(Motrix)将自动下载，支持Windows/Android。MAC需要需要设置保存路径。
+                  点击 推送到 Aria2(Motrix)将自动下载，支持Windows/MAC客户端需要需要设置保存路径。
                 </p>
-                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/04/pivJjje.png" style="  width: 18px;"> 推送至Aria2</button>
+                <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/08/pFSYaf1.png" style="  width: 32px;"> 推送至Aria2</button>
 
                 <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">下载速度因人而异，特别是共享网络（如校园网）</button>
 
@@ -354,7 +354,7 @@ $(function () {
                             el.select();
                             document.execCommand('copy');
                             document.body.removeChild(el);
-                            layer.msg('已复制');
+                            layer.msg('已复制,用户代理（UA）-> 填入 LogStatistic');
                         }
                     });
                     $('#pusharia').click(function () {
@@ -437,7 +437,7 @@ $(function () {
 
                         Swal.fire({
                             title: '系统提示',
-                            text: '推送成功',
+                            text: '推送成功！快去看看吧',
                             icon: 'success'
                         });
                     } else {
@@ -461,7 +461,7 @@ $(function () {
                 $('#loadingtext').hide();
                 Swal.fire({
                     title: '系统提示',
-                    text: '连接到RPC服务器超时：请检查Aria2是否已连接，RPC配置是否正确！',
+                    text: '连接到RPC服务器超时：请检查推送前Aria2是否正在运行， RPC已连接? RPC配置是否正确！',
                     icon: 'error'
                 });
             },
@@ -470,7 +470,7 @@ $(function () {
                 $('#loadingtext').hide();
                 Swal.fire({
                     title: '系统提示',
-                    text: '发送至Aria2时发生错误，请重试！' + res.responseText,
+                    text: '发送至Aria2时发生错误，请重试！推送前检查Aria2是否正在运行，RPC已连接? RPC配置是否正确！' + res.responseText,
                     icon: 'error'
                 });
             }
@@ -726,7 +726,7 @@ $(function () {
                                         $('#texttip').val('解析成功');
 
 
-                                        Swal.fire('解析成功', '请复制链接或推送aria', 'success');
+                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 Logstatistic 否则下载报错404，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
                                         $('#copy').removeClass('layui-btn-disabled').attr('data-url', downlink);
                                         $('#pusharia').removeClass('layui-btn-disabled').attr('data-url', downlink);
 
