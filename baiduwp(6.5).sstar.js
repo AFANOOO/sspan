@@ -1,13 +1,17 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.4
+// @version           6.5
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @license           AGPL-3.0-or-later
 // @icon              https://vitejs.dev/logo.svg
 // @match             *://pan.baidu.com/*
 // @match             *://yun.baidu.com/*
+// @match             *://pan.baidu.com/share/*
+// @match             *://yun.baidu.com/share/*
+// @match             *://pan.baidu.com/disk/home*
+// @match             *://yun.baidu.com/disk/home*
 // @connect           localhost
 // @connect           127.0.0.1
 // @connect           baidu.com
@@ -55,7 +59,7 @@ $(function () {
     }
 
       .swal2-container{
-      z-index: 999999999;
+         z-index: 999999999 !important;
       }
       .swal2-popup{
       padding-top: 20px!important;
@@ -230,13 +234,13 @@ $(function () {
               <div class="layui-card-body" style=" height: 428px;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">IDM</h1>
                 <p>
-                   选项 ->下载->手动添加任务时使用的用户代理(UA) ->填入 Logstatistic。在IDM新建任务，粘贴饪接即可下载，
+                   选项 ->下载->手动添加任务时使用的用户代理(UA) ->填入 <span style="font-weight: 600;" id="ts1">LogStatistic</span>。在IDM新建任务，粘贴饪接即可下载，
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/08/pFSYUYR.png" style="  width: 25px;"> 复制链接</button>
                 <hr style="margin: 23px 0;">
                 <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2/Motrix</h1>
                 <p>
-                  点击 推送到 Aria2(Motrix)将自动下载，支持Windows/MAC客户端需要需要设置保存路径。
+                  点击 推送到 Aria2(Motrix)将自动下载，支持<span style="font-weight: 600;" id="ts2">Windows/MAC</span>客户端需要需要设置保存路径。
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/08/pFSYaf1.png" style="  width: 32px;"> 推送至Aria2</button>
 
@@ -261,6 +265,13 @@ $(function () {
     `;
 
         $('#downbtn').click(function () {
+            var newStyle = document.createElement('style');
+            newStyle.textContent = `
+            .swal2-container {
+                z-index: 9999999999 !important;
+            }
+            `;
+            document.head.appendChild(newStyle);
 
             var htmlString = $("html").html();
             var regex = /"bdstoken":"(\w+)"/;
@@ -293,7 +304,7 @@ $(function () {
                 Swal.fire({
 
                     showConfirmButton: true, // 显示确认按钮
-               //   showCloseButton: true, // 隐藏关闭按钮
+                    //   showCloseButton: true, // 隐藏关闭按钮
 
                     title: '系统提示',
                     text: '请选择需要下载的文件',
@@ -635,11 +646,11 @@ $(function () {
                             layer.closeAll('loading');
                             $('#loadingtext').hide();
                             $('#texttip').val(getres.err);
-                            //暗号错误(或已更新)，请重新获取
+                            //暗号错误(或已更新)，请重新获取xxxxxxxx
                             const options = {
                                 title: '系统提示',
                                 showConfirmButton: false, // 隐藏确认按钮
-                            //  showCloseButton: true,    //关闭按钮
+                               // showCloseButton: true,    //关闭按钮
                                 icon: 'error'
                             }
 
@@ -726,7 +737,7 @@ $(function () {
                                         $('#texttip').val('解析成功');
 
 
-                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 Logstatistic 否则下载报错404，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
+                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 LogStatistic 否则下载报错404，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
                                         $('#copy').removeClass('layui-btn-disabled').attr('data-url', downlink);
                                         $('#pusharia').removeClass('layui-btn-disabled').attr('data-url', downlink);
 
