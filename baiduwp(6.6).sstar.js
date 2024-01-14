@@ -1,17 +1,21 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.5
+// @version           6.6
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @license           AGPL-3.0-or-later
 // @icon              https://vitejs.dev/logo.svg
 // @match             *://pan.baidu.com/*
 // @match             *://yun.baidu.com/*
-// @match             *://pan.baidu.com/share/*
-// @match             *://yun.baidu.com/share/*
 // @match             *://pan.baidu.com/disk/home*
 // @match             *://yun.baidu.com/disk/home*
+// @match             *://pan.baidu.com/disk/main*
+// @match             *://yun.baidu.com/disk/main*
+// @match             *://pan.baidu.com/s/*
+// @match             *://yun.baidu.com/s/*
+// @match             *://pan.baidu.com/share/*
+// @match             *://yun.baidu.com/share/*
 // @connect           localhost
 // @connect           127.0.0.1
 // @connect           baidu.com
@@ -23,6 +27,9 @@
 // @grant             GM_xmlhttpRequest
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
+// @run-at            document-idle
+// @downloadURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.user.js
+// @updateURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.meta.js
 // ==/UserScript==
 
 
@@ -31,11 +38,10 @@ var siteUrl = 'https://sswpdd.xyz';
 
 $(function () {
 
-    setInterval(function () {
-        if ($('.layui-layer-close').length > 0) {
-            $('.layui-layer-close').html('<img src="https://s11.ax1x.com/2024/01/04/pivY2VA.png" style="position: absolute; width: 14px; left: 4px; top: 4px;">');
-        }
-    }, 100);
+    function wait(ms) {
+        return Promise.resolve(new Promise((resolve) => setTimeout(resolve, ms)));
+    }
+
 
     var closeimg = 'https://s11.ax1x.com/2024/01/04/pivYEjg.png';
 
@@ -138,6 +144,34 @@ $(function () {
       .layui-layer-content{
       overflow: hidden!important;
       }
+      .h1 {
+      font-family: PingFangSC-Regular, sans-serif, Microsoft YaHei, SimHei, Tahoma !important;
+      font-weight: 700;
+      margin-bottom: 16px;
+      font-size: 32px;
+      line-height: 48px;
+        }
+      .h2{
+      font-size: 21px;
+      line-height: 2;
+        }
+      .h3{
+      font-size: 16.38px;
+      line-height: 2;
+        }
+      .layui-card-body{
+      position:relative;
+      padding:10px 15px;
+      line-height:22px;
+      }
+      .imgset{
+     position: absolute;
+     cursor: pointer;
+     font-size: 9px;
+     right: 15px;
+     bottom: 23px;
+     width: 35px;
+      }
     </style>`);
 
 
@@ -163,11 +197,23 @@ $(function () {
     };
 
     // Usage
-    layui.use(['layer', 'element'], function () {
+    layui.use(['layer', 'element'], async function () {
         var layer = layui.layer;
         var element = layui.element;
+        if (location.href.match(/^https:\/\/pan\.baidu\.com\/s\/[^\s]*$/)) {
+            //prepend是在最前面添加，加在后面用append
+            $('.x-button-box').eq(0).prepend('<a class="g-button g-button-blue" style="background-color: #ff436a;color: #fff;border-color: #ff436a;font-weight:700;" id="downbtn1"  href="javascript:;" ><span class="g-button-right"><em class="icon icon-download" title=""></em><span class="text" style="width: auto;">神速Down</span></span></a>');
 
-        $('.wp-s-agile-tool-bar__header.is-header-tool').prepend('<div class="wp-s-agile-tool-bar__h-group"><button style="    margin-right: 10px;" id="downbtn" class="u-button nd-file-list-toolbar-action-item is-need-left-sep u-button--primary u-button--default u-button--small is-has-icon  u-button--danger"><i class="iconfont icon-download"></i> <span>神速Down</span></button></div>');
+        } else if (location.href.startsWith('https://pan.baidu.com/disk/home')) {
+            console.log(location.href, 22222222, $('.tcuLAu'));
+            await wait(1000);
+            $('.tcuLAu').prepend('<a class="g-button  g-button-blue" style="background-color: #ff436a;color: #fff;border-color: #ff436a;font-weight:700;" id="downbtn"  href="javascript:;" ><span class="g-button-right"><em class="icon icon-download" title=""></em><span class="text" style="width: auto;">神速Down</span></span></a>');
+
+        }
+        else {
+            $('.wp-s-agile-tool-bar__header.is-header-tool').prepend('<div class="wp-s-agile-tool-bar__h-group"><button style="    margin-right: 10px;" id="downbtn" class="u-button nd-file-list-toolbar-action-item is-need-left-sep u-button--primary u-button--default u-button--small is-has-icon  u-button--danger"><i class="iconfont icon-download"></i> <span>神速Down</span></button></div>');
+
+        }
 
         if (self == top) {
             $('body').append(`
@@ -199,11 +245,11 @@ $(function () {
             <div class="layui-row layui-col-space15">
                 <div class="layui-col-md6 layui-col-sm6">
                   <div class="layui-card">
-                    <div class="layui-card-body" style="text-align:center;height: 428px;">
-                      <img src="https://sswpdd.xyz/ewm.jpg" style="width:240px;height:240px;">
-                      <h2 style="margin-top: 10px;">扫一扫不失联</h2>
-                      <h3>发送 <span class="piao">免费白嫖</span></h3>
-                      <h3>四个字获取暗号/无套路</h3>
+                    <div class="layui-card-body" style="text-align:center;height: 426px;">
+                      <img src="https://s11.ax1x.com/2024/01/15/pFi86Gd.jpg" style="width:240px;height:240px;">
+                      <h2 class="h2"  style="margin-top: 10px;">扫一扫不失联</h2>
+                      <h3 class="h3">发送 <span class="piao">免费白嫖</span></h3>
+                      <h3 class="h3">四个字获取暗号/无套路</h3>
                       <div class="demo"><div class="pincode-input-container"></div></div>
                       <div id="popup" class="hidden">
                       <div class="content">
@@ -225,27 +271,26 @@ $(function () {
                       </div>
 
 
-                <img src="https://s11.ax1x.com/2024/01/08/pFSYwSx.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 9px; right: 15px; bottom: 20px;width: 35px;">
+                <img class="imgset" src="https://s11.ax1x.com/2024/01/08/pFSYwSx.png" id="setoption" style=" position: absolute;cursor: pointer; font-size: 9px; right: 15px; bottom: 20px;width: 35px;">
               </div>
             </div>
           </div>
           <div class="layui-col-md6 layui-col-sm6">
             <div class="layui-card">
-              <div class="layui-card-body" style=" height: 428px;">
-                <h1 style="line-height: 40px;    margin-bottom: 10px;">IDM</h1>
+              <div class="layui-card-body" style=" height: 426px;">
+                <h1 class="h1" style="line-height: 40px;    margin-bottom: 10px;">IDM</h1>
                 <p>
                    选项 ->下载->手动添加任务时使用的用户代理(UA) ->填入 <span style="font-weight: 600;" id="ts1">LogStatistic</span>。在IDM新建任务，粘贴饪接即可下载，
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="copy"><img src="https://s11.ax1x.com/2024/01/08/pFSYUYR.png" style="  width: 25px;"> 复制链接</button>
                 <hr style="margin: 23px 0;">
-                <h1 style="line-height: 40px;    margin-bottom: 10px;">Aria2/Motrix</h1>
+                <h1 class="h1" style="line-height: 40px;    margin-bottom: 10px;">Aria2/Motrix</h1>
                 <p>
                   点击 推送到 Aria2(Motrix)将自动下载，支持<span style="font-weight: 600;" id="ts2">Windows/MAC</span>客户端需要需要设置保存路径。
                 </p>
                 <button class="layui-btn layui-btn-sm layui-btn-disabled" style="margin-top: 10px;background:#2196f3;" id="pusharia"><img src="https://s11.ax1x.com/2024/01/08/pFSYaf1.png" style="  width: 32px;"> 推送至Aria2</button>
 
                 <button type="button" class="layui-btn layui-btn-primary layui-btn-xs" style="margin: 10px 0 0 0;">下载速度因人而异，特别是共享网络（如校园网）</button>
-
 
                 </div>
               </div>
@@ -264,6 +309,19 @@ $(function () {
       </div>
     `;
 
+        $('#downbtn1').click(function () {
+
+            Swal.fire({
+
+
+
+                title: '系统提示',
+                text: '请先保存到网盘后使用',
+                icon: 'error'
+            });
+            return;
+        })
+
         $('#downbtn').click(function () {
             var newStyle = document.createElement('style');
             newStyle.textContent = `
@@ -271,6 +329,12 @@ $(function () {
                 z-index: 9999999999 !important;
             }
             `;
+            setTimeout(function () {
+                if ($('.layui-layer-close2').length > 0) {
+                    $('.layui-layer-close2').html('<img src="https://s11.ax1x.com/2024/01/04/pivY2VA.png" style="position: absolute; width: 14px; left: 4px; top: 4px;">');
+                }
+            }, 666);
+
             document.head.appendChild(newStyle);
 
             var htmlString = $("html").html();
@@ -279,27 +343,24 @@ $(function () {
             var bdstoken = match[1];
             var selectedIds = [];
             var downlist = [];
-            $('tr.selected').each(function () {
-                var dataId = $(this).data('id');
-                selectedIds.push(dataId);
+            const selectedItems = getSelectedList()
+            console.log(selectedItems, 222222222)
+            selectedItems.forEach(function (item) {
+                console.log(item)
+                selectedIds.push(item.fs_id);
             });
-            $('.mouse-choose-box .is-checked').each(function () {
-                let dataId = $(this).data('id');
-                if (dataId) {
-                    selectedIds.push(dataId);
-                }
-            });
-            if ($('tr.selected img[src*="ceH8M5EZYnGhnBKRceGqmaZXPPw2xbO+1x"]').length > 0) {
-                Swal.fire({
+            // $('tr.selected').each(function () {
+            //     var dataId = $(this).data('id');
+            //     selectedIds.push(dataId);
+            // });
+            console.log('选择了', selectedIds)
+            // $('.mouse-choose-box .is-checked').each(function () {
+            //     let dataId = $(this).data('id');
+            //     if (dataId) {
+            //         selectedIds.push(dataId);
+            //     }
+            // });
 
-
-                    position: 'top-end',
-                    title: '系统提示',
-                    text: '请不要选择文件夹解析,因为还没学会.',
-                    icon: 'error'
-                });
-                return;
-            }
             if (selectedIds.length === 0) {
                 Swal.fire({
 
@@ -308,6 +369,14 @@ $(function () {
 
                     title: '系统提示',
                     text: '请选择需要下载的文件',
+                    icon: 'error'
+                });
+                return;
+            }
+            if (selectedItems.some(item => !!item.isdir) || $('tr.selected img[src*="ceH8M5EZYnGhnBKRceGqmaZXPPw2xbO+1x"]').length > 0) {
+                Swal.fire({
+                    title: '系统提示',
+                    text: '请不要选择文件夹解析,因为还没学会.',
                     icon: 'error'
                 });
                 return;
@@ -346,6 +415,10 @@ $(function () {
                     $('tr.selected').each(function (index, item) {
                         selectedone.push($(item).find('td').eq(1).find('a').attr('title'));
                     });
+                    if (selectedone.length == 0) {
+                        selectedone = getSelectedList().map(e => e.formatName || e.server_filename)
+                    }
+                    selectedone = selectedone.map(e => e.replace('.PanD', ''))
                     var text = (selectedone + '等' + $('tr.selected').length + '个文件...');
                     $('#curname').text(selectedone.join('、'));
 
@@ -525,18 +598,27 @@ $(function () {
             }
         });
     }
-    var getSelectedList = function () {
-        let pType = getCurType();
-        if (pType === 'old') {
+
+    function getSelectedList() {
+        try {
             return require('system-core:context/context.js').instanceForSystem.list.getSelected();
-        }
-        if (pType === 'new') {
-            let mainList = document.querySelector('.nd-main-list');
-            if (!mainList) mainList = document.querySelector('.nd-new-main-list');
-            return mainList.__vue__.selectedList;
+        } catch (e) {
+            return document.querySelector('.wp-s-core-pan').__vue__.selectedList;
         }
     }
-    var getCurType = function () {
+
+    // var getSelectedList = function () {
+    //     let pType = getCurType(); //
+    //     if (pType === 'old') {
+    //         return require('system-core:context/context.js').instanceForSystem.list.getSelected();
+    //     }
+    //     if (pType === 'new') {
+    //         let mainList = document.querySelector('.nd-main-list');
+    //         if (!mainList) mainList = document.querySelector('.nd-new-main-list');
+    //         return mainList.__vue__.selectedList;
+    //     }
+    // }
+    var getCurType = function () {//获取页面新旧
         if (isOPage()) return 'old';
         if (isNPage()) return 'new';
         if (isSharePage()) return 'share';
@@ -581,6 +663,7 @@ $(function () {
         var downlist = [];
 
         var filelists = getSelectedList();
+        console.log('filelists------->>>>', filelists)
         for (var i = 0; i < filelists.length; i++) {
             selectedIds.push(filelists[i].fs_id);
         }
@@ -650,7 +733,7 @@ $(function () {
                             const options = {
                                 title: '系统提示',
                                 showConfirmButton: false, // 隐藏确认按钮
-                               // showCloseButton: true,    //关闭按钮
+                                //  showCloseButton: true,    //关闭按钮
                                 icon: 'error'
                             }
 
@@ -737,7 +820,7 @@ $(function () {
                                         $('#texttip').val('解析成功');
 
 
-                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 LogStatistic 否则下载报错404，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
+                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 Logstatistic 否则下载报错404，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
                                         $('#copy').removeClass('layui-btn-disabled').attr('data-url', downlink);
                                         $('#pusharia').removeClass('layui-btn-disabled').attr('data-url', downlink);
 
