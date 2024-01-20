@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.6
+// @version           6.7
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @license           AGPL-3.0-or-later
@@ -27,9 +27,8 @@
 // @grant             GM_xmlhttpRequest
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
-// @run-at           document-idle
-// @downloadURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.user.js
-// @updateURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.meta.js
+// @run-at            document-idle
+// @antifeature       ads
 // ==/UserScript==
 
 
@@ -842,7 +841,7 @@ $(function () {
 
                                         Swal.fire({
                                             title: '系统提示',
-                                            text: ress.response.msg + '111111',
+                                            text: ress.response.msg + '',
                                             icon: 'error'
                                         });
 
