@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.7
+// @version           6.8
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
-// @license           AGPL-3.0-or-later
+// @antifeature       ads
+// @antifeature       membership
+// @license           MIT
 // @icon              https://vitejs.dev/logo.svg
 // @match             *://pan.baidu.com/*
 // @match             *://yun.baidu.com/*
@@ -28,7 +30,6 @@
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
 // @run-at            document-idle
-// @antifeature       ads
 // ==/UserScript==
 
 
