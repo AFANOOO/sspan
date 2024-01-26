@@ -1,5 +1,7 @@
-<h1>如果IDM提示403错误，就是UA配置不正确导致，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入 LogStatistic </h1>
+<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc"> LogStatistic </span> </h1>
+
 <hr>
+
 <h2>简介</h2>
 <p>
 不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习测试使用，更多功能正在完善中...</p>
