@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           6.9
+// @version           7.0
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @antifeature       ads
@@ -319,7 +319,7 @@ $(function () {
 
 
                 title: '系统提示',
-                text: '请先保存到网盘后使用',
+                text: '保存文件后到自己网盘内选择文件后使用 [神速Down]',
                 icon: 'error'
             });
             return;
@@ -383,7 +383,7 @@ $(function () {
                     //   showCloseButton: true, // 隐藏关闭按钮
 
                     title: '系统提示',
-                    text: '同时只能下载一个文件',
+                    text: '暂时只能下载一个文件',
                     icon: 'error'
                 });
                 return;
