@@ -1,4 +1,9 @@
-<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc"> LogStatistic </span> </h1>
+<h1>维护此项目需要巨大的成本。您测试该脚本可能需要观看文章or点赞来获得测试使用权限。<a href="https://sswpdd.xyz/doc/anh.html" target="_blank">查看教程</a><br><br>
+  
+由于某些地区屏蔽的问题导致一直显示在分享中... 您可以切换一个网络测试例如：<span style="color:red"> 使用移动热点 </span>
+</h1>
+<hr>
+<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc">LogStatistic</span>，看不见插件或者输入暗号弹窗，<span style="color:red"> 请尝试停掉其他插件或更换浏览器 </span></h1>
 
 <hr>
 
