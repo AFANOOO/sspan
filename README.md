@@ -1,6 +1,5 @@
-<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc">LogStatistic</span>，看不见插件或者输入暗号弹窗，<span style="color:red"> 请尝试停掉其他插件或更换浏览器 </span></h1>
-
-<hr>
+<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc">LogStatistic</span>，如暗号弹窗错位或转圈后弹窗消失，<span style="color:red"> 请下载原生态浏览器和Tampermonkey </span></h1>
+<h3>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装
 
 <h2>📌使用前阅读</h2>
 
