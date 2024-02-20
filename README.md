@@ -1,5 +1,15 @@
-<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc">LogStatistic</span>，如暗号弹窗错位或转圈后弹窗消失，<span style="color:red"> 请下载原生态浏览器和Tampermonkey </span></h1>
-<h3>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装
+<h1>如果IDM提示403错误，<span style="color:red"> 就是UA配置不正确导致</span>，在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入<span style="color:#2800fc">LogStatistic</span>，如暗号弹窗错位或转圈后弹窗消失，<span style="color:red">安装兼容的浏览器和油猴</span></h1>
+<h3>兼容的桌面端浏览器：<a href="https://www.google.cn/intl/zh-CN/chrome/next-steps.html?platform=linux&installdataindex=empty&defaultbrowser=0">Google Chrome</a>|<a href="https://www.firefox.com.cn/">Firefox</a>|<a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ">Microsoft Edge</a></h3>
+<h3>兼容的油猴插件：</h3>
+<div id="desktop-browser-list" class="browser-list" style="display: block;">
+    <ul>
+<li>Google Chrome：<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> 或 <a href="https://chromewebstore.google.com/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88/gcalenpjmijncebpfijmoaglllgpjagf?hl=zh-CN">Tampermonkey Beta</a></li>
+<li>Microsoft Edge：<a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd">Tampermonkey</a>或 <a href="https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag">Tampermonkey Beta</a>
+<li>Firefox Browser：<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/">Tampermonkey</a>
+</ul>
+  </div>
+<h3>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装</h3>
+
 
 <h2>📌使用前阅读</h2>
 
