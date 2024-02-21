@@ -7,7 +7,7 @@
 <br><h1>体验极速下载，从神速Down开始！</h1></p>
 <hr>
 <div>
-<strong>探索最受欢迎的框架，理解它的内部机制，带大家体验使用脚本的乐趣。</strong>
+<strong>探索最受欢迎的前端框架，理解它的内部机制，带大家体验使用脚本的乐趣。</strong>
  <p>适用于 <a href="https://www.google.cn/intl/zh-CN/chrome/next-steps.html?platform=linux&amp;installdataindex=empty&amp;defaultbrowser=0" rel="nofollow">Chrome</a>，<a href="https://www.firefox.com.cn/" rel="nofollow">Firefox</a>，<a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" rel="nofollow">Microsoft Edge</a> 浏览器</p>
 <a href="https://t.me/ssdown" >防失联交流群组</a>  Github By<a href="https://github.com/AFANOOO/sspan"> @ssstar</a> 
 </div>
@@ -32,7 +32,7 @@
 <p>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装</p>
 <p>Do not support any third-party oil monkeys, such as Violent Monkey, Greasemonkey Oil Monkey, Stay for Firefox, etc. Do not install without adaptation.</p>
 <hr>
-<h3>测试界面/ Work interface</h3>
+<h3>测试界面 / Work interface</h3>
 <table><thead>
 <tr>
 <th>IDM方法</th>
@@ -44,8 +44,32 @@
 <td><img src="https://sswpdd.xyz/doc/static/img/Aria2.gif" alt=""></td>
 </tr>
 </tbody></table>
-<p>详细使用步骤，请参考教程：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击查看使用教程</a></p>
+<p>详细步骤 / 工具下载：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击查看教程</a></p>
 <p>防失联交流群组：<a href="https://t.me/ssdown" rel="nofollow">点击进入</a></p>
+<hr>
+<h3>扩展技巧 / Expansion techniques</h3>
+<p>神速Down 使用着非常优秀的前端框架， 并且集成了一些功能性的拓展，下面是来简单的介绍一下。</p><p>Shensu Down uses an excellent framework and integrates some functional extensions. Below is a brief introduction.</p>
+
+<strong>IDM使用技巧 / IDM usage tips</strong>
+<ul><li>选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入 LogStatistic。在 IDM 新建任务，粘贴链接即可下载。
+<font>Options ->Download ->User Agent (UA) to be used when manually adding tasks ->Fill in LogStatistics. Create a new task in IDM and paste the link to download it.</font></li></ul>
+
+<strong>Aria2使用技巧 / Aria2 usage tips</strong>
+<ul><li>Aria2默认推送地址无需任何设置，点击推送到Aria2将自动下载，支持Windows/Android，<strong>MAC客户端</strong>需要自行修改保存路径否则无法下载。</font>
+<font>The default push address for Aria2 does not require any settings. Clicking on push to Aria2 will automatically download, supporting Windows/Android. <strong>MAC clients</strong> need to modify the save path themselves, otherwise they cannot download.</font></li></ul>
+
+<strong>Motrix使用技巧 / Motrix usage tips</strong>
+<ul><li>Motrix默认地址为 http://localhost:16800/jsonrpc 点击小齿轮更改为你的推送地址，在点击解析将默认保存你修改的地址，点击推送即可</font>
+<font>The default address for Motrix is http://localhost:16800/jsonrpc Click on the small gear to change to your push address, then click on resolve to save the modified address by default. Click on push to proceed</font></li></ul>
+
+<strong>其他的使用技巧 / Other usage tips</strong>
+<ul><li>脚本目前仅支持Windows / MAC /Android 环境下的Aria2 / Motrix 推送。</font>
+<font>The script currently only supports Aria2/Motrix push in Windows/MAC/Android environments.</font>
+</ul>
+
+<p>注意：脚本目前还未支持远程Aria2推送，例如路由器上的Aria2</p>
+<p>Note: The script currently does not support remote Aria2 push, such as Aria2 on the router</p>
+
 <hr>
 <h3>常见问题 / FAQFrequently Asked Questions</h3>
 <p>经过三个月的测试我们总结了一些常见问题解决方法 详见下列</p>
@@ -55,8 +79,8 @@
 <li>FAQ : IDM下载提示403错误
  <font>Q:在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入LogStatistic </font></li>
 <br>
-<li>IDM download prompt 403 error
- <font>Options in IDM ->Download ->User Agent (UA) to be used when manually adding tasks ->Fill in LogStatistics </font>
+<li>FAQ :IDM download prompt 403 error
+ <font>Q:Options in IDM ->Download ->User Agent (UA) to be used when manually adding tasks ->Fill in LogStatistics </font>
 </li>
 <br>
 <li>FAQ : 暗号弹窗错位或转圈后弹窗消失
