@@ -17,7 +17,7 @@
 
 
 <h3> 兼容的桌面端浏览器 / Supported browsers
-
+<br>
 <a href="https://www.google.cn/intl/zh-CN/chrome/next-steps.html?platform=linux&amp;installdataindex=empty&amp;defaultbrowser=0" rel="nofollow">Google Chrome</a> | <a href="https://www.firefox.com.cn/" rel="nofollow">Firefox</a> | <a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" rel="nofollow">Microsoft Edge</a></h3>
 <p>建议测试本脚本安装上述最新的浏览器，因为第三方chome或精简的浏览器也会出现脚本不能正常使用的情况。</p>
 <p>It is recommended to test this script and install the latest browser mentioned above, as third-party chome or simplified browsers may also encounter situations where the script cannot be used properly.</p>
