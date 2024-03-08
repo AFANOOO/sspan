@@ -35,8 +35,8 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><img src="https://baijiahao.baidu.com/bjh/picproxy?param=vdUWb7vU%2Fcn5o50yKDBMUEDVDQjyB%2BPav%2BFpiKFJ2f%2F2y0QyEKZUroZnhy%2B4FFukFmVXHwch2mfQd9sR5p2dv%2FTLLw%2F79eGJVGO%2BuC4GMggNKpMzPF%2FL7RaQwv2%2BrBUOmNzwsx%2BK0ZvHl3PuaxAGPs0WcoZIt71I" alt=""></td>
-<td><img src="https://baijiahao.baidu.com/bjh/picproxy?param=vdUWb7vU%2Fcn5o50yKDBMUEDVDQjyB%2BPav%2BFpiKFJ2f%2F2y0QyEKZUroZnhy%2B4FFukFmVXHwch2mfQd9sR5p2dv5p4ggGXj%2FZB%2BpqNv1TpXKWs%2BTRQHjkPvJ2m%2Fb495zp7pi8FTwAylcBaGcqis8MK%2Fs0WcoZIt71I" alt=""></td>
+<td><img src="https://upload-images.jianshu.io/upload_images/20756397-6d203e2f4bc9b387.gif?imageMogr2/auto-orient/strip" alt=""></td>
+<td><img src="https://upload-images.jianshu.io/upload_images/20756397-a45a850c74023b35.gif?imageMogr2/auto-orient/strip" alt=""></td>
 </tr>
 </tbody></table>
 <p>详细功能测试步骤 / 测试工具下载：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击前往</a></p>
