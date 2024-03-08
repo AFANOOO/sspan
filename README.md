@@ -17,30 +17,30 @@
 
 
 <h3> 兼容的桌面端浏览器 / Supported browsers
-<br>
-<a href="https://www.google.cn/intl/zh-CN/chrome/next-steps.html?platform=linux&amp;installdataindex=empty&amp;defaultbrowser=0" rel="nofollow">Google Chrome</a> | <a href="https://www.firefox.com.cn/" rel="nofollow">Firefox</a> | <a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" rel="nofollow">Microsoft Edge</a></h3>
+
+<a href="https://www.google.cn/intl/zh-CN/chrome/" rel="nofollow">Google Chrome</a> | <a href="https://www.firefox.com.cn/" rel="nofollow">Firefox</a> | <a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" rel="nofollow">Microsoft Edge</a></h3>
 <p>建议测试本脚本安装上述最新的浏览器，因为第三方chome或精简的浏览器也会出现脚本不能正常使用的情况。</p>
 <p>It is recommended to test this script and install the latest browser mentioned above, as third-party chome or simplified browsers may also encounter situations where the script cannot be used properly.</p>
 
 <h3> 兼容的油猴 / Supported Monkeys</h3>
-<div><ul><li>Google Chrome：<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> 或 <a href="https://chromewebstore.google.com/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88/gcalenpjmijncebpfijmoaglllgpjagf?hl=zh-CN" rel="nofollow">Tampermonkey Beta</a></li><li>Microsoft Edge：<a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd" rel="nofollow"> Tampermonkey</a> 或 <a href="https://chrome.google.com/webstore/detail/violent-monkey/jinjaccalgkegednnccohejagnlnfdag">Tampermonkey Beta</a><br></li><li>Firefox Browser：<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/">Tampermonkey</a><br></li></ul></div>
+<div><ul><li>Google Chrome：<a href="https://www.123pan.com/s/Ui7DVv-CXRHA.html">Tampermonkey</a> 或 <a href="https://www.123pan.com/s/Ui7DVv-NXRHA.html" rel="nofollow">Tampermonkey Beta</a></li><li>Microsoft Edge：<a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd" rel="nofollow"> Tampermonkey</a> 或 <a href="https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88/fcmfnpggmnlmfebfghbfnillijihnkoh">Tampermonkey Beta</a><br></li><li>Firefox Browser：<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/">Tampermonkey</a><br></li></ul></div>
 <p>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装</p>
 <p>Do not support any third-party oil monkeys, such as Violent Monkey, Greasemonkey Oil Monkey, Stay for Firefox, etc. Do not install without adaptation.</p>
 <hr>
-<h3>测试界面 / Work interface</h3>
+<h3>渲染界面 / Rendering interface</h3>
 <table><thead>
 <tr>
-<th>IDM方法</th>
-<th>Aria2方法</th>
+<th>IDM功能测试</th>
+<th>Aria2功能测试</th>
 </tr>
 </thead><tbody>
 <tr>
-<td><img src="https://sswpdd.xyz/doc/static/img/idm.gif" alt=""></td>
-<td><img src="https://sswpdd.xyz/doc/static/img/Aria2.gif" alt=""></td>
+<td><img src="https://baijiahao.baidu.com/bjh/picproxy?param=vdUWb7vU%2Fcn5o50yKDBMUEDVDQjyB%2BPav%2BFpiKFJ2f%2F2y0QyEKZUroZnhy%2B4FFukFmVXHwch2mfQd9sR5p2dv%2FTLLw%2F79eGJVGO%2BuC4GMggNKpMzPF%2FL7RaQwv2%2BrBUOmNzwsx%2BK0ZvHl3PuaxAGPs0WcoZIt71I" alt=""></td>
+<td><img src="https://baijiahao.baidu.com/bjh/picproxy?param=vdUWb7vU%2Fcn5o50yKDBMUEDVDQjyB%2BPav%2BFpiKFJ2f%2F2y0QyEKZUroZnhy%2B4FFukFmVXHwch2mfQd9sR5p2dv5p4ggGXj%2FZB%2BpqNv1TpXKWs%2BTRQHjkPvJ2m%2Fb495zp7pi8FTwAylcBaGcqis8MK%2Fs0WcoZIt71I" alt=""></td>
 </tr>
 </tbody></table>
-<p>详细步骤 / 工具下载：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击查看教程</a></p>
-<p>防失联交流群组：<a href="https://t.me/ssdown" rel="nofollow">点击进入</a></p>
+<p>详细功能测试步骤 / 测试工具下载：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击前往</a></p>
+<p>防失联交流群组：<a href="https://t.me/ssdown" rel="nofollow">点击前往</a></p>
 <hr>
 <h3>扩展技巧 / Expansion techniques</h3>
 <p>神速Down 使用着非常优秀的前端框架， 并且集成了一些功能性的拓展，下面是来简单的介绍一下。</p><p>Shensu Down uses an excellent framework and integrates some functional extensions. Below is a brief introduction.</p>
