@@ -7,7 +7,7 @@
     <h2>体验极速下载，从神速Down开始！</h2>
     <h4>探索最受欢迎的前端框架，理解它的内部机制，带大家体验使用脚本的乐趣。</h4>
   <p align="center">适用于 <a href="https://www.google.cn/intl/zh-CN/chrome/next-steps.html?platform=linux&amp;installdataindex=empty&amp;defaultbrowser=0" rel="nofollow">Chrome</a>，<a href="https://www.firefox.com.cn/" rel="nofollow">Firefox</a>，<a href="https://www.microsoft.com/zh-cn/edge?form=MA13FJ" rel="nofollow">Microsoft Edge</a> 浏览器</p>
-<p align="center"><a href="https://t.me/ssdown" >防失联交流群组</a>  Github By<a href="https://github.com/AFANOOO/sspan"> @ssstar</a> </p>
+<p align="center"><a href="https://t.me/+B1PiSmBGPIw0MTYx" >防失联交流群组</a>  Github By<a href="https://github.com/AFANOOO/sspan"> @ssstar</a> </p>
 </div>
 
 <h3>概述 / Overview</h3>
@@ -35,12 +35,12 @@
 </tr>
 </thead><tbody>
 <tr>
-<td><img src="https://upload-images.jianshu.io/upload_images/20756397-6d203e2f4bc9b387.gif?imageMogr2/auto-orient/strip" alt=""></td>
-<td><img src="https://upload-images.jianshu.io/upload_images/20756397-a45a850c74023b35.gif?imageMogr2/auto-orient/strip" alt=""></td>
+<td><img src="https://ice.frostsky.com/2024/04/16/327d915c757eb9e97da6a697f926028d.gif" alt="327d915c757eb9e97da6a697f926028d.gif" border="0"></td>
+<td><img src="https://ice.frostsky.com/2024/04/16/65211575c5a47699f60cbf10fecd3bfb.gif" alt="65211575c5a47699f60cbf10fecd3bfb.gif" border="0"></td>
 </tr>
 </tbody></table>
 <p>详细功能测试步骤 / 测试工具下载：<a href="http://sswpdd.xyz/doc/doc.html" rel="nofollow">点击前往</a></p>
-<p>防失联交流群组：<a href="https://t.me/ssdown" rel="nofollow">点击前往</a></p>
+<p>防失联交流群组：<a href="https://t.me/+B1PiSmBGPIw0MTYx" rel="nofollow">点击前往</a></p>
 <hr>
 <h3>扩展技巧 / Expansion techniques</h3>
 <p>神速Down 使用着非常优秀的前端框架， 并且集成了一些功能性的拓展，下面是来简单的介绍一下。</p><p>Shensu Down uses an excellent framework and integrates some functional extensions. Below is a brief introduction.</p>
