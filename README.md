@@ -24,7 +24,7 @@
 
 <h3> 兼容的油猴 / Supported Monkeys</h3>
 <div><ul><li>Google Chrome：<a href="https://www.123pan.com/s/Ui7DVv-CXRHA.html">Tampermonkey</a> 或 <a href="https://www.123pan.com/s/Ui7DVv-NXRHA.html" rel="nofollow">Tampermonkey Beta</a></li><li>Microsoft Edge：<a href="https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd" rel="nofollow"> Tampermonkey</a> 或 <a href="https://microsoftedge.microsoft.com/addons/detail/%E7%AF%A1%E6%94%B9%E7%8C%B4%E6%B5%8B%E8%AF%95%E7%89%88/fcmfnpggmnlmfebfghbfnillijihnkoh">Tampermonkey Beta</a><br></li><li>Firefox Browser：<a href="https://addons.mozilla.org/firefox/addon/tampermonkey/">Tampermonkey</a><br></li></ul></div>
-<p>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 未做适配请勿安装</p>
+<p>不支持任何第三方油猴 例如：暴力猴、Greasemonkey 油猴子、Stay for Firefox等 <strong>未做适配请勿安装</strong></p>
 <p>Do not support any third-party oil monkeys, such as Violent Monkey, Greasemonkey Oil Monkey, Stay for Firefox, etc. Do not install without adaptation.</p>
 <hr>
 <h3>渲染界面 / Rendering interface</h3>
@@ -69,7 +69,6 @@
 <h3>常见问题 / FAQFrequently Asked Questions</h3>
 <p>经过三个月的测试我们总结了一些常见问题解决方法 详见下列</p>
 <p>After three months of testing, we have summarized some common problem-solving methods as follows.</p>
-
 <ul>
 <li>FAQ : IDM下载提示403错误
  <font>Q:在IDM中 选项 -> 下载 -> 手动添加任务时使用的用户代理（UA）-> 填入LogStatistic </font></li>
@@ -78,31 +77,41 @@
  <font>Q:Options in IDM ->Download ->User Agent (UA) to be used when manually adding tasks ->Fill in LogStatistics </font>
 </li>
 <br>
-<li>FAQ : 暗号弹窗错位或转圈后弹窗消失
-<font>Q:安装README说明的兼容浏览器和油猴插件</font></li>
+<li>FAQ : 暗号弹窗错位或转圈后弹窗消失。
+<font>Q:安装README说明的兼容浏览器和油猴插件，且尝试<strong>停用</strong>其他的脚本插件</font></li>
 <br>
-<li>FAQ : The password pop-up window is misaligned or disappears after rotating in a circle
-<font>Q:Install README instructions for compatible browsers and oil monkey plugins</font></li>
+<li>FAQ : The password pop-up window is misaligned or disappears after rotating.
+<font>Q:Install the README instructions for compatible browsers and oil monkey plugins, and try disabling other script plugins</font></li>
 <br>
 <li>FAQ : 我没看见有红色按钮？界面没有任何东西？
-<font><p>Q：请使用兼容的浏览器Microsoft Edge、Google Chrome、Firefox ，确保安装并启用了<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> 并且安装了<a href="https://greasyfork.org/zh-CN/scripts/480255-神速down">神速Down</a>最新版本脚本，如果你在度盘内还未能看见任何神速down红色按钮，请你尝试停用其他的脚本。</p></font></li>
+<font><p>Q：请使用兼容的浏览器Microsoft Edge、Google Chrome、Firefox ，确保安装并启用了<a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> 并且安装了<a href="https://greasyfork.org/zh-CN/scripts/480255-神速down">神速Down</a>最新版本脚本，如果你在度盘内还未能看见任何神速down红色按钮，请你<strong>尝试停用其他的脚本</strong>。</p></font></li>
 <br>
 <li>FAQ : I didn't see the red button? Is there nothing on the interface?
-<font>Q:Please use compatible browsers such as Microsoft Edge, Google Chrome, and Firefox to ensure that <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> is installed and enabled, and the latest version of the script on this page is installed. If you still cannot see any down red text buttons on the dial, please try disabling other scripts.</font></li>
+<font>Q:Please use compatible browsers such as Microsoft Edge, Google Chrome, and Firefox to ensure that <a href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo">Tampermonkey</a> is installed and enabled, and the latest version of the script on this page is installed. If you still cannot see any down red text buttons on the dial, please try <strong> disabling other scripts.</strong></font></li>
 <br>
 <li>FAQ : 为什么我看不见哪里有输入密码框？
-<font><p>Q：点击蓝色解析按钮就会有输入暗号的弹窗，如果你还未能看到此弹窗请使用README 描述的油猴 并且你可以尝试停用其他脚本,确保是神速最新脚本</p></font></li>
+<font><p>Q：点击蓝色解析按钮就会有输入暗号的弹窗，如果你还未能看到此弹窗请使用README 描述的油猴 并且你可以尝试<strong>停用其他脚本</strong>,确保是神速最新脚本</p></font></li>
 <br>
 <li>FAQ : Why can't I see the password input box somewhere?
-<font><p>Q：Clicking the blue parse button will result in a pop-up window for entering the password. If you haven't seen this pop-up window yet, please use the README described oil monkey and try disabling other scripts to ensure they are the latest on this page</p></font></li></ul>
+<font><p>Q：Clicking the blue parse button will result in a pop-up window for entering the password. If you haven't seen this pop-up window yet, please use the README described oil monkey and try <strong> disabling other scripts </strong>to ensure they are the latest on this page</p></font></li>
+<br>
+<li>FAQ : 输入密码时输入一个数字变成两个？
+<font><p>Q：这是因为Windows中启用了中文键盘,将他切换为<strong>英文键盘</strong>输入即可解决。</p></font></li>
+<br>
+<li>FAQ : When entering a password, changing one number to two?
+<font><p>Q：This is because the Chinese keyboard is enabled in Windows, and switching it to an <strong>English</strong> keyboard input can solve the problem.</p></font></li>
+<br>
+</ul>
 <hr>
 <h3>声明 / Statement</h3>
 <p>1、脚本未最小化或混淆  Script not minimized or confused</p>
 <p>2、未引用不符合规则的外部资源 Unreferenced external resources that do not comply with rules</p>
-<p>3、脚本符合Greasyfork会员内容 The script conforms to Greasyfork membership content</strong>
-<ul><li>1.这个脚本会在你访问的网站插入广告。 
-This script will insert advertisements on the website you visit</li>
-<li>2.你只有在 参与某些事后 才能使用脚本的全部功能，如加入某群组、订阅某频道或在某页点赞等。 
+<p>3、脚本符合Greasyfork<strong>会员内容</strong> The script conforms to Greasyfork <strong>membership</strong> content</strong>
+<ul><li>1.这个脚本会在你访问的网站插入<strong>广告</strong>。 
+This script will insert <strong>advertisements</strong> on the website you visit</li>
+<li>2.你只有在 参与某些事后 才能使用脚本的全部功能，如<strong>加入某群组、订阅某频道或在某页点赞等</strong>。 
 You can only use all the functions of the script after participating in certain activities, such as joining a group, subscribing to a channel, or liking a page.</li></ul>
-<p>举报前三思,瞎举报会被Ban
-According to the Greasyfork rules, reporting from malicious companies will result in being banned by Ban</p>
+<p>4、脚本含有追踪行为，使用脚本责代表你<strong>同意该条款</strong>。</p>
+<p>The script contains tracking behavior, and using the script represents your <strong>agreement to this clause.</strong></p>
+<p>举报前三思,瞎举报会被<strong>Ban</strong>
+According to the Greasyfork rules, reporting from malicious companies will result in being banned by <strong>Ban</strong></p>
