@@ -1,5 +1,6 @@
 <h1>神速Down-README <img src="https://img.shields.io/badge/MIT-License-brightgreen.svg?style=popout-square" alt=""> <img src="https://img.shields.io/badge/Tampermonkey-5.0.1-red.svg?style=popout-square" alt=""> <img src="https://img.shields.io/badge/Tampermonkey-Beta-red.svg?style=popout-square" alt=""></h1>
-
+<h3>🛒网盘低价合租：<a href="https://ass.coxpan.com/"> 立即前往</a> </h3>
+<hr>
 <div align="center">
     <img alt="logo" src="https://vitejs.dev/logo-with-shadow.png" style="height: 80px">
 </div>
